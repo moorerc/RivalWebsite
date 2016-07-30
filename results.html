@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<title>Rival Ultimate - Results</title>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
-	
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" type="image/png" href="img/icons/RivalFavicon_64Circle.png">
-	
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/results.js"></script>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -20,14 +23,14 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
-	
+
+
 </head>
-<body>
+<body ng-controller="ResultsCtrl">
 	<nav class="navbar navbar-toplogo navbar-fixed-top">
 		<a href="index.html"><div id="navbarlogolaurel"><div id="laurelimage"></div></div></a>
 	</nav>
-	
+
 	<nav class="navbar navbar-white navbar-fixed-top">
 
 		<div class="container-fluid">
@@ -37,12 +40,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				
+
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav nav-pills nav-justified">
         	<li role="presentation"><a href="aboutus.html"><span class="sliding-middle-out">ABOUT US</span></a></li>
-				  <li role="presentation"><a href="roster.html"><span class="sliding-middle-out">ROSTER</span></a></li>	
+				  <li role="presentation"><a href="roster.html"><span class="sliding-middle-out">ROSTER</span></a></li>
 					<li role="presentation"></li>
 					<li role="presentation"><a href="news.html"><span class="sliding-middle-out">NEWS</span></a></li>
 					<li role="presentation"><a href="results.html"><span class="active sliding-middle-out">RESULTS</span></a></li>
@@ -55,7 +58,7 @@
 		<div class="row">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10" id="maincol">
-					
+
 					<div class="row">
 						<div class="col-sm-3">
 							<div class="statbox">
@@ -84,7 +87,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<br/><br/>
 					<div class="row">
 						<div class="col-sm-2"></div>
@@ -95,457 +98,47 @@
 					</div>
 					<br/>
 
-  <!-- GREAT LAKES REGIONALS 2015 -->
-    <div class="row thumbnail tournament-box">
-    	
-    	<div class="row vertical-align">
-			<div class="tournament-details col-sm-3">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3>Great Lakes Regionals</h3>
-						<p>
-							September 12-13, 2015<br/>
-							West Chester, OH<br/><br/>
-							Second Place
-						</p>
-						<p><a href="http://play.usaultimate.org/events/Great-Lakes-Womens-Regionals-2015/" target="_blank" class="btn btn-default" role="button"><span class="glyphicon glyphicon-info-sign"></span></a> 
-						<a href="https://goo.gl/maps/cLzrgMRDEuA2" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-map-marker"></a></p>
-					</div>
-				</div>
-			</div>
-  	
-  	<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="img/Regionals2015_TeamPhoto.jpg" alt="...">
-				</div>
-  		</div>
-  	
-  		<div class="col-sm-6 tournament-results">
-  			<ul class="list-group">
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Frenzy</div>
-							<div class="col-sm-3 game-score">13-0</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Spicy Tuna</div>
-							<div class="col-sm-3 game-score">13-4</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Nemesis</div>
-							<div class="col-sm-3 game-score">8-12</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Dish</div>
-							<div class="col-sm-3 game-score">13-9</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-										<div class="col-sm-6 game-opponent">vs Notorioius C.L.E.</div>
-										<div class="col-sm-3 game-score">13-4</div>
-							</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-								<div class="col-sm-6 game-opponent">vs Belle</div>
-								<div class="col-sm-3 game-score">13-6</div>
-							</div>
-					</li>
-				</ul>
-  		</div>
-  		
-  		</div>
-  		
-  </div>
-  
-  
-  
-  
+  <!-- ALL -->
+      <div class="row thumbnail tournament-box" ng-repeat="tournament in tournaments2015">
 
-  
-  
- 
-	<!-- EAST PLAINS SECTIONALS 2015 -->
-    <div class="row thumbnail tournament-box">
-    	
-    	<div class="row vertical-align">
-			<div class="tournament-details col-sm-3">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3>East Plains Sectionals</h3>
-						<p>
-							August 29-30, 2015<br/>
-							Versailles, OH<br/><br/>
-							First Place
-						</p>
-						<p><a href="http://play.usaultimate.org/events/East-Plains-Womens-Sectionals-2015/" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-info-sign"></span></a> 
-						<a href="https://goo.gl/maps/QMYj1jWz4gJ2" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-map-marker"></a></p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="img/Sectionals2015_TeamPhoto.JPG" alt="...">
-				</div>
-  		</div>
-  	
-  		<div class="col-sm-6">
-  			<ul class="list-group">
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Notorious C.L.E.</div>
-							<div class="col-sm-3 game-score">13-5</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Belle</div>
-							<div class="col-sm-3 game-score">13-7</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Dayton</div>
-							<div class="col-sm-3 game-score">13-1</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Flo</div>
-							<div class="col-sm-3 game-score">13-2</div>
-						</div>
-					</li>
-				</ul>
-  		</div>
-  		
-  	</div>
-  </div>
+      	<div class="row vertical-align">
+  			<div class="tournament-details col-sm-3">
+  				<div class="thumbnail">
+  					<div class="caption">
+  						<h3>{{tournament.name}}</h3>
+  						<p>
+  							{{tournament.date}}<br/>
+  							{{tournament.location}}<br/><br/>
+  							{{tournament.result}}
+  						</p>
+  						<p><a ng-href="{{tournament.infolink}}" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-info-sign"></span></a>
+  						<a ng-href="{{tournament.mapslink}}" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-map-marker"></a></p>
+  					</div>
+  				</div>
+  			</div>
+
+    	<div class="col-sm-4">
+  				<div class="thumbnail">
+  					<img ng-src="{{tournament.teampic}}" alt="...">
+  				</div>
+    		</div>
+
+    		<div class="col-sm-6">
+    			<ul class="list-group">
+  					<li ng-repeat="game in tournament.games" class="list-group-item" ng-class="{'list-group-item-danger': game.score_them >= game.score_us, 'list-group-item-success': game.score_them < game.score_us}">
+  						<div class="row">
+  							<div class="col-sm-3 game-type">{{game.type}}</div>
+  							<div class="col-sm-6 game-opponent">{{"vs " + game.opponent}}</div>
+  							<div class="col-sm-3 game-score">{{game.score_us + "-" + game.score_them}}</div>
+  						</div>
+  					</li>
+  				</ul>
+    		</div>
+    	</div>
+    </div>
 
 
 
-<!-- CHICAGO HEAVYWEIGHTS 2015 -->
-    <div class="row thumbnail tournament-box">
-    	
-    	<div class="row vertical-align">
-			<div class="tournament-details col-sm-3">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3>Chicago Heavyweights</h3>
-						<p>
-							August 8-9, 2015<br/>
-							Rockford, IL<br/><br/>
-							Fourth Place
-						</p>
-						<p><a href="http://play.usaultimate.org/events/Heavyweights-2015/" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-info-sign"></span></a> 
-						<a href="https://goo.gl/maps/MEFQUCpBvRS2" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-map-marker"></a></p>
-					</div>
-				</div>
-			</div>
-  	
-  	<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="img/Heavyweights2015_TeamPhoto.JPG" alt="...">
-				</div>
-  		</div>
-  	
-  		<div class="col-sm-6">
-  			<ul class="list-group">
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Dish</div>
-							<div class="col-sm-3 game-score">12-8</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Snap</div>
-							<div class="col-sm-3 game-score">13-4</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs RevoLOUtion</div>
-							<div class="col-sm-3 game-score">13-4</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Heist</div>
-							<div class="col-sm-3 game-score">5-13</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Quarters</div>
-										<div class="col-sm-6 game-opponent">vs Notorious C.L.E.</div>
-										<div class="col-sm-3 game-score">15-1</div>
-							</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Semis</div>
-								<div class="col-sm-6 game-opponent">vs Nemesis</div>
-								<div class="col-sm-3 game-score">10-15</div>
-							</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Consolation</div>
-								<div class="col-sm-6 game-opponent">vs Small Batch</div>
-								<div class="col-sm-3 game-score">10-15</div>
-							</div>
-					</li>
-				</ul>
-  		</div>
-  	</div>
-  </div>
-
-
-
-
-<!-- MOTOWN THROWDOWN 2015 -->
-    <div class="row thumbnail tournament-box">
-    	
-    	<div class="row vertical-align">
-			<div class="tournament-details col-sm-3">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3>Motown Throwdown</h3>
-						<p>
-							July 25-26, 2015<br/>
-							Sylvania, OH<br/><br/>
-							First Place
-						</p>
-						<p><a href="http://play.usaultimate.org/events/Motown-Throwdown-2015/" target="_blank" class="btn btn-default" role="button"><span class="glyphicon glyphicon-info-sign"></span></a> 
-						<a href="https://goo.gl/maps/AcU6m9TtzYr" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-map-marker"></a></p>
-					</div>
-				</div>
-			</div>
-  	
-  	<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="img/MotownThrowdown2015_TeamPhoto.jpg" alt="...">
-				</div>
-  		</div>
-  	
-  		<div class="col-sm-6">
-  			<ul class="list-group">
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Belle</div>
-							<div class="col-sm-3 game-score">13-2</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Notorious C.L.E</div>
-							<div class="col-sm-3 game-score">13-1</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs RevoLOUtion</div>
-							<div class="col-sm-3 game-score">13-2</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Semis</div>
-							<div class="col-sm-6 game-opponent">vs RevoLOUtion</div>
-							<div class="col-sm-3 game-score">15-5</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Finals</div>
-										<div class="col-sm-6 game-opponent">vs Notorious C.L.E.</div>
-										<div class="col-sm-3 game-score">15-5</div>
-							</div>
-					</li>
-				</ul>
-  		</div>
-  		</div>
-  </div>
-
-
-
-<!-- ELITE SELECT CHALLENGE 2015 -->
-    <div class="row thumbnail tournament-box">
-    	
-    	<div class="row vertical-align">
-			<div class="tournament-details col-sm-3">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3>Elite Select Challenge</h3>
-						<p>
-							July 11-12, 2015<br/>
-							Hilliard, OH<br/><br/>
-							Thirteenth Place
-						</p>
-						<p><a href="http://play.usaultimate.org/events/TCT-Elite-Select-Challenge-2015/" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-info-sign"></span></a> 
-						<a href="https://goo.gl/maps/66xTaQsLBUP2" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-map-marker"></a></p>
-					</div>
-				</div>
-			</div>
-  	
-  	<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="img/ESC2015_TeamPhoto.JPG" alt="...">
-				</div>
-  		</div>
-  	
-  		<div class="col-sm-6">
-  			<ul class="list-group">
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Nemesis</div>
-							<div class="col-sm-3 game-score">7-11</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Hot Metal</div>
-							<div class="col-sm-3 game-score">7-11</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Underground</div>
-							<div class="col-sm-3 game-score">9-13</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Consolation</div>
-							<div class="col-sm-6 game-opponent">vs Dish</div>
-							<div class="col-sm-3 game-score">11-10</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Consolation</div>
-										<div class="col-sm-6 game-opponent">vs Maeve</div>
-										<div class="col-sm-3 game-score">9-6</div>
-							</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Consolation</div>
-								<div class="col-sm-6 game-opponent">vs Encore</div>
-								<div class="col-sm-3 game-score">11-10</div>
-							</div>
-					</li>
-				</ul>
-  		</div>
-  	</div>
-  </div>
-
-
-
-<!-- BEACHFRONT 2015 -->
-    <div class="row thumbnail tournament-box">
-    	
-    	<div class="row vertical-align">
-			<div class="tournament-details col-sm-3">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3>Beachfront Invitational</h3>
-						<p>
-							June 6-7, 2015<br/>
-							Joliet, IL<br/><br/>
-							Not Sanctioned
-						</p>
-						<p><a href="http://play.usaultimate.org/events/Beachfront-Instant-Classic-Invitational/" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-info-sign"></span></a> 
-						<a href="https://goo.gl/maps/uMbDC2MsxYA2" class="btn btn-default" target="_blank" role="button"><span class="glyphicon glyphicon-map-marker"></a></p>
-					</div>
-				</div>
-			</div>
-  	
-  	<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="img/Beachfront2015_TeamPhoto.JPG" alt="...">
-				</div>
-  		</div>
-  	
-  		<div class="col-sm-6">
-  			<ul class="list-group">
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Heist Y</div>
-							<div class="col-sm-3 game-score">4-10</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Dish</div>
-							<div class="col-sm-3 game-score">7-10</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Nemesis</div>
-							<div class="col-sm-3 game-score">7-10</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-							<div class="col-sm-6 game-opponent">vs Spicy Tuna</div>
-							<div class="col-sm-3 game-score">11-5</div>
-						</div>
-					</li>
-					<li class="list-group-item list-group-item-danger">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-										<div class="col-sm-6 game-opponent">vs Heist X</div>
-										<div class="col-sm-3 game-score">8-9</div>
-							</div>
-					</li>
-					<li class="list-group-item list-group-item-success">
-						<div class="row">
-							<div class="col-sm-3 game-type">Pool Play</div>
-								<div class="col-sm-6 game-opponent">vs Dish</div>
-								<div class="col-sm-3 game-score">11-9</div>
-							</div>
-					</li>
-				</ul>
-  		</div>
-  	</div>
-  </div>
-
-
-	
 			</div>
 			<div class="col-sm-1"></div>
 		</div>
