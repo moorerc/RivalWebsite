@@ -1,0 +1,489 @@
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+
+.bad {
+	color: #a94442 !important;
+  background-color: #f2dede;
+	border-color: #a94442 !important;
+}
+
+.good {
+	color: #3c763d !important;
+  background-color: #dff0d8;
+	border-color: #3c763d !important;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/*           NAVIGATION BAR            */
+/* ----------------------------------- */
+/* ----------------------------------- */
+
+.sliding-middle-out {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 3px;
+}
+.sliding-middle-out:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .3s ease, background-color .3s ease;
+}
+.sliding-middle-out:hover:after {
+	width: 100%;
+	background: #D4AF37;
+}
+
+
+#navbarlogoimg{
+	width:40px;
+	height:40px;
+	margin:4px;
+	background-image:url("img/RCircleLogo_Small.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.navbar {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 500;
+	/*font-family: 'Michroma', sans-serif;*/
+	
+}
+
+.navbar-default {
+	background-color:transparent !important;
+	border: 0px solid transparent !important;
+	margin: 10px;
+}
+
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: black !important;
+    background-color: transparent !important;
+    font-size: 1.5em;
+}
+
+.nav>li>a>span.active {
+    color: #D4AF37 !important;
+}
+
+
+.nav>li>a>span:hover {
+    color: #D4AF37 !important;
+}
+
+.nav-content {
+	border:1px solid blue;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/*       HOME PAGE - INDEX.HTML        */
+/* ----------------------------------- */
+/* ----------------------------------- */
+
+.cnt {
+	position:relative;
+}
+
+.cnt:before{
+	width: 100vw;;
+	height:100vh;
+	margin:0;
+	padding:0;
+	background: url("img/homebg.jpg");
+	-webkit-filter:grayscale(100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0.2;
+}
+
+#maincol {
+	height:70vh;
+	margin-top:25vh;
+	margin-bottom:5vh;
+	text-align:center;
+}
+
+#logoimage {
+	max-width: 80%;
+	height:400px;
+	margin:auto;
+	opacity:1.0;
+	background: url("img/Rlogo.png");
+  background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.socialmedia {
+	width:100%;
+	text-align:center;
+	padding-top:5%;
+}
+
+.smlogo {
+	padding:2px;
+	margin-left:5px;
+	margin-right:5px;
+	display:inline-block;
+	width:36px;
+	height:36px;
+}
+
+.logofb {
+	background-image: url("img/facebook_black.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.logofb:hover {
+	background-image: url("img/facebook_gold.png");
+	-webkit-filter: invert(0%);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.logotwitter {
+	background-image: url("img/twitter_black.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.logotwitter:hover {
+	background-image: url("img/twitter_gold.png");
+	-webkit-filter: invert(0%);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.logoemail {
+	background-image: url("img/email_black.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.logoemail:hover {
+	background-image: url("img/email_gold.png");
+	-webkit-filter: invert(0%);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+
+.logoyt{
+	background-image: url("img/pointer_black.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+.logoyt:hover {
+	background-image: url("img/pointer_gold.png");
+	-webkit-filter: invert(0%);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/*        OTHER NAVIGATION BAR         */
+/* ----------------------------------- */
+/* ----------------------------------- */
+
+.navbar-white {
+	background-color:white !important;
+	/*border: 0px solid transparent !important;*/
+	z-index: 1029 !important;
+	padding-top:10px;
+	border-bottom: 2px solid black !important;
+}
+
+.navbar-toplogo {
+	width: 20vw;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	z-index: 1030 !important;
+}
+
+
+#navbarlogolaurel{
+	height:15vmin;
+	width:15vmin;
+	margin-left:auto;
+	margin-right:auto;
+	
+	background-color:white !important;
+	border-radius: 50% !important;
+	padding:22px;
+	
+}
+
+
+#laurelimage{
+	width:100%;
+	height:100%;
+	background-image: url("img/RCircleLogo_Small.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+#laurelimage:hover{
+	background-image: url("img/RCircleLogo_SmallGold.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position:center;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/*    ABOUT US PAGE - ABOUTUS.HTML     */
+/* ----------------------------------- */
+/* ----------------------------------- */
+
+#aboutus-content {
+	
+}
+
+.nobord {
+	border:0px !important;
+}
+
+.aboutus-title{
+	font-size:20px;
+	font-weight: 700;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.aboutus-paragraph {
+	font-size: 16px;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/*      ROSTER PAGE - ROSTER.HTML      */
+/* ----------------------------------- */
+/* ----------------------------------- */
+
+#roster-content {
+
+}
+
+
+
+.roster-icon {
+	background-color:#B8B8B8 ;
+	color:white;
+	display:inline-block;
+	border-radius:50%;
+	width:40px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	font-size:16px;	
+	
+	
+}
+
+.player-number {
+	font-size:1.4em;	
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+}
+
+#rosterheader {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	/*font-family: 'Michroma', sans-serif;*/
+	
+}
+
+.caption h3{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 1.2em;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/*        NEWS PAGE - NEWS.HTML        */
+/* ----------------------------------- */
+/* ----------------------------------- */
+#news-content {
+	background-color:#FFFFFF ;
+	/*font-family: 'PT Sans', sans-serif;
+	font-weight: 500;*/
+}
+
+.article-icon {
+	width:80px;
+	height:80px;
+	border-radius: 50%;
+	font-size:48px;
+	padding-top:15px;
+	color:white;
+	background-color:#888888;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.article-title {
+	padding:10px;
+	display:block;
+	font-size:14px;
+	font-weight:700;
+	font-family: 'PT Sans', sans-serif;
+	color:#888888;
+	border-top:1px solid #B0B0B0;
+	border-bottom:1px solid #B0B0B0;
+}
+
+.article-source {
+	font-size: 14px;
+	color:#B0B0B0  ;
+	padding-top: 8px;
+}
+
+.article-date {
+	font-size: 12px;
+	color:#B0B0B0  ;
+	padding-bottom:8px;
+}
+
+.article .thumbnail{
+	height:280px;
+}
+
+.article:hover .thumbnail{
+	border-color:#D4AF37;
+}
+
+.article:hover .article-icon{
+	background-color:#D4AF37;
+}
+
+.article:hover .article-date{
+  color:#D4AF37;
+}
+
+.article:hover .article-title{
+  color:#D4AF37;
+  border-color:#D4AF37;
+}
+
+.article:hover .article-source{
+	color:#D4AF37;
+}
+
+
+.article:hover {
+	text-decoration:none;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/*     RESULTS PAGE - RESULTS.HTML     */
+/* ----------------------------------- */
+/* ----------------------------------- */
+#results-content {
+	background-color:#FFFFFF ;
+	/*font-family: 'PT Sans', sans-serif;
+	font-weight: 500;*/
+}
+
+.tournament-box {
+    padding:10px !important;
+}
+
+.tournament-box h3{
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size:18px;
+}
+
+.tournament-details .thumbnail{
+	border:none;
+
+}
+
+.tournament-results {
+}
+
+.game-opponent {
+	text-align:center;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.game-score {
+	text-align:right;
+	font-size:12px;
+}
+
+.game-type {
+	text-align:left;
+	font-size:12px;
+}
+
+.btn-gold {
+    background-color: #D4AF37 !important;
+    border: #D4AF37 !important;
+    
+}
+
+.statbox {
+	min-height: 20vh;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+}
+
+.stattitle{
+	color: black ;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 500;
+	font-size:18px;
+	text-transform:uppercase;
+	padding-bottom:8px;
+	display:block;
+}
+
+.statdata{
+	color: black ;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 500;
+	font-size:40px;
+	text-transform:uppercase;
+	border:2px solid black;
+	height:100px;
+	width:100px;
+	border-radius:50%;
+	margin:auto;
+	padding-top:20px;
+	display:inline-block;
+}
