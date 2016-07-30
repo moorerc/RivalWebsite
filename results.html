@@ -63,21 +63,21 @@
 						<div class="col-sm-3">
 							<div class="statbox">
 								<span class="stattitle">Games Played</span>
-								<div class="statdata">28</div>
+								<div class="statdata">{{gamesPlayed()}}</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<div class="statbox">
 								<span class="stattitle">Overall Record</span>
-								<div class="statdata good">21</div>
-								<div class="statdata bad">7</div>
+								<div class="statdata good">{{totalWins()}}</div>
+								<div class="statdata bad">{{totalLosses()}}</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<div class="statbox">
 								<span class="stattitle">Points Scored</span>
-								<div class="statdata good">326</div>
-								<div class="statdata bad">186</div>
+								<div class="statdata good">{{totalPointsScored()}}</div>
+								<div class="statdata bad">{{totalPointsAgainst()}}</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
@@ -88,18 +88,20 @@
 						</div>
 					</div>
 
-					<br/><br/>
-					<div class="row">
-						<div class="col-sm-2"></div>
-						<div class="col-sm-8">
-							<span id="rosterheader"> 2015 SEASON </span>
-						</div>
-						<div class="col-sm-2"></div>
-					</div>
-					<br/>
+
 
   <!-- ALL -->
-      <div class="row thumbnail tournament-box" ng-repeat="tournament in tournaments2015">
+  <span ng-repeat="(season, tournaments) in getResults() | orderBy: 'season'">
+	  <br/><br/>
+	  <div class="row">
+		  <div class="col-sm-2"></div>
+		  <div class="col-sm-8">
+			  <span id="rosterheader">{{season + " SEASON"}}</span>
+		  </div>
+		  <div class="col-sm-2"></div>
+	  </div>
+	  <br/>
+      <div class="row thumbnail tournament-box" ng-repeat="tournament in tournaments">
 
       	<div class="row vertical-align">
   			<div class="tournament-details col-sm-3">
@@ -136,7 +138,7 @@
     		</div>
     	</div>
     </div>
-
+</span>
 
 
 			</div>
