@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Rival Ultimate - Magic 8</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" href="img/icons/RivalFavicon_64Circle.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+ <script src="jquery-ui.min.js"></script>
+ <script src="jquery.ui.touch-punch.min.js"></script>
+	
+<script>
+var messages = new Array();
+messages[0] = "back0";
+messages[1] = "back1";
+messages[2] = "back2";
+messages[3] = "back3";
+
+var front = true;
+var side = "front";
+var randomnumber = 0;
+
+$(document).click(function() {
+	if (front == true){
+		$( "#ball" ).effect( "shake", {times:4, direction: "up"}, 2000 );
+		randomnumber = Math.floor(Math.random() * 4);
+
+		$( "#ball").switchClass("front", messages[randomnumber], 2000, "easeInBack" );
+		side = messages[randomnumber];
+		front = false;
+  }
+  else {
+  	$( "#ball").switchClass(side, "front", 2000, "easeInBack" );
+  	front = true;
+  }
+  
+});
+
+</script>
+	
+</head>
+<body>
+
+	<div id="magic8-content" class="container col-sm-12">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8" id="maincol">
+					
+					<div class="row">
+							<div id="ball" class="front"></div>
+					</div>
+						
+			</div>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+		
+		
+</body>
+</html>

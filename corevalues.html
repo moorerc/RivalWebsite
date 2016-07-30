@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+     <title>Rival Ultimate - Core Values</title>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+     <link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <link rel="icon" type="image/png" href="img/icons/RivalFavicon_64Circle.png">
+
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <!--<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+     <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+     <script src="jquery.ui.touch-punch.min.js"></script>
+
+     <!-- Latest compiled JavaScript -->
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+     <script src="corevalues.js"></script>
+
+     <style>
+          #title {
+              max-width:500px;
+              margin-left:auto;
+              margin-right:auto;
+              display:block;
+              margin-top:25px;
+              margin-bottom:10px;
+          }
+
+    	   .inputTable {
+    				/*border: 1px solid blue;
+    				padding:50px;*/
+    		}
+
+    		td {
+    			margin:20px;
+    		}
+
+            #canvas {
+                border:4px solid black;
+                margin-left:auto;
+                margin-right:auto;
+                display:block;
+            }
+
+            #inputSet {
+                /*border:1px solid black;*/
+                width:400px;
+                margin-left:auto;
+                margin-right:auto;
+                display:block;
+                text-align:center;
+                margin-bottom:20px;
+            }
+
+            tr {
+                /*border: 1px solid green;*/
+            }
+
+            .inputIcon img{
+                max-width: 40px;
+                max-height: 40px;
+                margin-right:5px;
+                /*border:1px solid orange;*/
+            }
+
+            .inputName {
+                padding:10px;
+                /*border:1px solid purple;*/
+                font-family: 'Michroma', sans-serif;
+            }
+
+            .inputSlider {
+                padding-left:10px;
+                padding-right:10px;
+                /*border: 1px solid blue;*/
+            }
+
+            .inputVal {
+                font-family: 'Fjalla One', sans-serif;
+                font-size: 14px;
+                /*border:1px solid orange;*/
+                text-align:center;
+                width:55px;
+                padding:5px;
+                border-radius: 5px;
+            }
+
+
+            #brainVal {
+                color: rgba(0, 61, 167, 1.0);
+            }
+            #brainValOuter {
+                background-color:  rgba(0, 61, 167, 0.5);
+            }
+            #effortVal {
+                color: rgba(181, 127, 0, 1.0);
+            }
+            #effortValOuter {
+                background-color:  rgba(181, 127, 0, 0.5);
+            }
+            #skillVal {
+                color: rgba(121, 36, 47, 1.0);
+            }
+            #skillValOuter {
+                background-color: rgba(121, 36, 47, 0.5);
+            }
+            #triangleVal {
+                color: rgba(34, 93, 57, 1.0);
+            }
+            #characterValOuter {
+                background-color: rgba(34, 93, 57, 0.5);
+            }
+
+            .spacer {
+                height:10px;
+                display:block;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <img id="title" src="img/CoreValuesTitle.png" />
+       <canvas id="canvas" width="500" height="500"></canvas>
+       <br/><br/>
+       <form>
+       	<table class="inputTable" id="inputSet">
+            <tr>
+                <td class="inputIcon"><img src="img/B_brain.png"/></td>
+                <td class="inputName" id="nameBrain">BRAIN</td>
+                <td class="inputSlider" ><input type="range" min="0" max="100" value="10" step="1" oninput="updateBrainVal(this.value)" id="brainRadius" /></td>
+                <td class="inputVal" id="brainValOuter"><span id="brainVal">10</span></td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td class="inputIcon"><img src="img/E_effort.png"/></td>
+                <td class="inputName">EFFORT</td>
+                <td class="inputSlider"><input type="range" min="0" max="100" value="10" step="1" oninput="updateEffortVal(this.value)" id="effortRadius" /></td>
+                <td class="inputVal" id="effortValOuter"><span id="effortVal">10</span></td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td class="inputIcon"><img src="img/S_skill.png"/></td>
+                <td class="inputName">SKILL</td>
+                <td class="inputSlider"><input type="range" min="0" max="100" value="10" step="1" oninput="updateSkillVal(this.value)" id="skillRadius" /></td>
+                <td class="inputVal" id="skillValOuter"><span id="skillVal">10</span></td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td class="inputIcon"><img src="img/C_character.png"/></td>
+                <td class="inputName">CHARACTER</td>
+                <td class="inputSlider"><input type="range" min="0" max="100" value="50" step="-1" oninput="updateTriangleSize(this.value)" id="triangleRadius" /></td>
+                <td class="inputVal" id="characterValOuter"><span id="triangleVal">50</span></td>
+            </tr>
+       	</table>
+        <!--<button type="button" onclick="saveImage()">Save</button>-->
+       </form>
+    </body>
+</html>
