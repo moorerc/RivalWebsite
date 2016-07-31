@@ -261,7 +261,7 @@ app.controller('MainCtrl', function($scope) {
               {
                   "id":115,
                   "date_earned":"1469315520000",
-                  "details":"vs Riot"
+                  "details":"vs Traffic"
               },
 
           ]
@@ -354,7 +354,7 @@ app.controller('MainCtrl', function($scope) {
               {
                   "id":115,
                   "date_earned":"1469315520000",
-                  "details":"vs Riot"
+                  "details":"vs Traffic"
               },
           ]
       },
@@ -614,7 +614,7 @@ app.controller('MainCtrl', function($scope) {
               {
                   "id":115,
                   "date_earned":"1469315520000",
-                  "details":"vs Riot"
+                  "details":"vs Traffic"
               },
               {
                   "id":116,
@@ -787,7 +787,7 @@ app.controller('MainCtrl', function($scope) {
               {
                   "id":115,
                   "date_earned":"1469315520000",
-                  "details":"vs Riot"
+                  "details":"vs Traffic"
               },
           ]
       },
