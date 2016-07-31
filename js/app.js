@@ -205,7 +205,40 @@ app.controller('MainCtrl', function($scope) {
     "description": "Watch an All Star Tour game (live stream or in person) and support women's ultimate and Stevie! Post photo evidence to slack.",
     "created": "",
     "created_by": 8
-  }
+},
+{
+  "id": 116,
+  "title": "Bonding Badge Badge",
+  "image": "badge_pals.png",
+  "description": "Take a photo of yourself and a teammate doing a non-frisbee related activity together and post it to slack. Photo must include participants hanging out together during the week, outside of your homes. (Pictures at practice, workouts, to/from rival events, eating after practice, or solely with people you live with do not count!)",
+  "created": "",
+  "created_by": 16
+},
+{
+  "id": 117,
+  "title": "Sleeping Beauty",
+  "image": "badge_zs.png",
+  "description": "Take a selfie with a sleeping teammate (during non-normal sleep hours) and post it to slack.",
+  "created": "",
+  "created_by": 31
+},
+{
+  "id": 118,
+  "title": "Snapchat Soulmates",
+  "image": "badge_ghost.png",
+  "description": "Achieve 'best friend' status (the smiling face or yellow heart emoji) on Snapchat with a teammate not in your pod! Post screenshot proof to slack channel. ",
+  "created": "",
+  "created_by": 15
+},
+{
+  "id": 119,
+  "title": "Border Patrol",
+  "image": "badge_car.png",
+  "description": "Take a photo of/by a state border sign and post it to slack. Only one photo needed per group. After a state border is claimed, nobody else can earn badge credit for that state.",
+  "created": "",
+  "created_by": 31
+},
+
 
   ];
 
@@ -225,6 +258,11 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1468805425000",
                   "details":"CHC Van Packet"
               },
+              {
+                  "id":115,
+                  "date_earned":"1469315520000",
+                  "details":"vs Riot"
+              },
 
           ]
       },
@@ -242,6 +280,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":102,
                   "date_earned":"1468973760000",
                   "details":""
+            },
+            {
+                "id":115,
+                "date_earned":"1469588760000",
+                "details":"vs Fury/Nightlock"
             },
         ]
       },
@@ -307,7 +350,13 @@ app.controller('MainCtrl', function($scope) {
           "id":6,
           "name": "champ",
           "image": "user_champ.jpg",
-          "badges": []
+          "badges": [
+              {
+                  "id":115,
+                  "date_earned":"1469315520000",
+                  "details":"vs Riot"
+              },
+          ]
       },
       {
           "id":8,
@@ -348,7 +397,17 @@ app.controller('MainCtrl', function($scope) {
                   "id":104,
                   "date_earned":"1468632000000",
                   "details":"Link 1"
-              }
+              },
+              {
+                  "id":106,
+                  "date_earned":"1469239140000",
+                  "details":""
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469588520000",
+                  "details":"vs Fury/Nightlock"
+              },
 
           ]
       },
@@ -388,7 +447,27 @@ app.controller('MainCtrl', function($scope) {
                   "id":113,
                   "date_earned":"1468674000000",
                   "details":"All the snacks. #snackcaptain"
-              }
+              },
+              {
+                  "id":111,
+                  "date_earned":"1469408100000",
+                  "details":"Sophie and the Speaker"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469841720000",
+                  "details":"vs Molly Brown"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469841720000",
+                  "details":"in Person Bonus"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469934360000",
+                  "details":"Buddy Bonding"
+              },
           ]
       },
       {
@@ -415,6 +494,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":101,
                   "date_earned":"1468362000000",
                   "details":"Google Hangout with Tots"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1469558280000",
+                    "details":""
               }
           ]
       },
@@ -433,13 +517,32 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1468985880000",
                     "details":""
               },
+              {
+                  "id":108,
+                  "date_earned":"1469471340000",
+                  "details":"Win the Party"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1469471280000",
+                  "details":"Kristens Box Out 'Jump'"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469841720000",
+                  "details":"vs Molly Brown"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469841720000",
+                  "details":"in Person Bonus"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469934360000",
+                  "details":"Buddy Bonding"
+              },
           ]
-      },
-      {
-          "id":13,
-          "name": "sam",
-          "image": "user_sam.jpg",
-          "badges": []
       },
       {
           "id":14,
@@ -465,7 +568,17 @@ app.controller('MainCtrl', function($scope) {
                   "id":108,
                   "date_earned":"1469152500000",
                   "details":"A-W-E-S-O-M-E"
-              }
+              },
+              {
+                  "id":106,
+                  "date_earned":"1469239140000",
+                  "details":""
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469587560000",
+                  "details":"Silent Disco"
+              },
           ]
       },
       {
@@ -487,7 +600,27 @@ app.controller('MainCtrl', function($scope) {
                   "id":104,
                   "date_earned":"1468632000000",
                   "details":"Link 3"
-              }
+              },
+              {
+                  "id":106,
+                  "date_earned":"1469239140000",
+                  "details":""
+              },
+              {
+                  "id":107,
+                  "date_earned":"1469238420000",
+                  "details":"Snapchat Soulmates"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469315520000",
+                  "details":"vs Riot"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469587560000",
+                  "details":"Silent Disco"
+              },
           ]
       },
       {
@@ -514,7 +647,17 @@ app.controller('MainCtrl', function($scope) {
                   "id":111,
                   "date_earned":"1468414560000",
                   "details":"Dani goes horizontal."
-              }
+              },
+              {
+                  "id":107,
+                  "date_earned":"1469588340000",
+                  "details":"Bonding Badge Badge"
+              },
+              {
+                  "id":108,
+                  "date_earned":"1469238720000",
+                  "details":"Swap Horses"
+              },
           ]
       },
       {
@@ -559,6 +702,11 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1468985880000",
                     "details":""
               },
+              {
+                  "id":115,
+                  "date_earned":"1469588580000",
+                  "details":"vs Fury/Nightlock"
+              },
           ]
       },
       {
@@ -570,6 +718,11 @@ app.controller('MainCtrl', function($scope) {
                     "id":114,
                     "date_earned":"1468969620000",
                     "details":""
+              },
+              {
+                  "id":108,
+                  "date_earned":"1469300580000",
+                  "details":"Red Wagon"
               },
           ]
       },
@@ -587,6 +740,21 @@ app.controller('MainCtrl', function($scope) {
                     "id":114,
                     "date_earned":"1468968000000",
                     "details":""
+              },
+              {
+                  "id":111,
+                  "date_earned":"1469401740000",
+                  "details":"Brittanys Backhand"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469590500000",
+                  "details":"vs Fury/Nightlock"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469587560000",
+                  "details":"Silent Disco"
               },
           ]
       },
@@ -610,7 +778,17 @@ app.controller('MainCtrl', function($scope) {
                   "id":113,
                   "date_earned":"1468755900000",
                   "details":"Banana Bread"
-              }
+              },
+              {
+                  "id":112,
+                  "date_earned":"1469755800000",
+                  "details":"Adventures of Monty and Gene"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469315520000",
+                  "details":"vs Riot"
+              },
           ]
       },
       {
@@ -643,7 +821,47 @@ app.controller('MainCtrl', function($scope) {
                   "id":104,
                   "date_earned":"1468632000000",
                   "details":"Link 2"
-              }
+              },
+              {
+                  "id":106,
+                  "date_earned":"1469239140000",
+                  "details":""
+              },
+              {
+                  "id":107,
+                  "date_earned":"1469239980000",
+                  "details":"Sleeping Beauty"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1469239380000",
+                  "details":"Border Patrol"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1469401380000",
+                  "details":"Brittanys a Baller"
+              },
+              {
+                  "id":113,
+                  "date_earned":"1469278800000",
+                  "details":"Chocolate Chip Cookies"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469590500000",
+                  "details":"vs Fury/Nightlock"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469587560000",
+                  "details":"Silent Disco"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469934360000",
+                  "details":"Buddy Bonding"
+              },
           ]
       },
       {
@@ -661,6 +879,16 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1468888680000",
                     "details":""
               },
+              {
+                  "id":115,
+                  "date_earned":"1469590500000",
+                  "details":"vs Fury/Nightlock"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1469587560000",
+                  "details":"Silent Disco"
+              },
           ]
       },
       {
@@ -672,6 +900,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":109,
                   "date_earned":"1466292600000",
                   "details":"Treasurer"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1469588760000",
+                  "details":"vs Fury/Nightlock"
               },
           ]
       },
