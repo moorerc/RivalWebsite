@@ -2,6 +2,9 @@ var app = angular.module('myApp', []);
 
 app.controller('MainCtrl', function($scope) {
 
+    angular.element(document).ready(function () {
+        $('#statTable').DataTable();
+    });
 
     $scope.getUserImageURL = function() {
         return "img/userimages/" + $scope.selectedUser.image;

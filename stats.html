@@ -25,22 +25,40 @@
   	<!-- Latest compiled JavaScript -->
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+    <!-- Data Tables -->
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+
   </head>
 
 
   <body class="stats" ng-controller="MainCtrl">
     <div style="height:100%; padding:20px;">
-        <table class="table table-hover table-condensed" style="width:45%">
-            <tr ng-repeat="player in players">
-                <td>{{player.name}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
-                <td>{{getPlayerPointTotalFromSubSheets(player.id)}}
-                <td>{{getPlayerStatsTotals(player.id, "turns")}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "scores")}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "assists")}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "ds")}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "touches")}}</td>
+        <table id="statTable" class="table table-hover table-condensed" style="width:45%">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Stat Totals</td>
+              <td>Points Played</td>
+              <td>Turns</td>
+              <td>Scores</td>
+              <td>Assists</td>
+              <td>Ds</td>
+              <td>Touches</td>
             </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="player in players">
+                  <td>{{player.name}}</td>
+                  <td>{{getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
+                  <td>{{getPlayerPointTotalFromSubSheets(player.id)}}
+                  <td>{{getPlayerStatsTotals(player.id, "turns")}}</td>
+                  <td>{{getPlayerStatsTotals(player.id, "scores")}}</td>
+                  <td>{{getPlayerStatsTotals(player.id, "assists")}}</td>
+                  <td>{{getPlayerStatsTotals(player.id, "ds")}}</td>
+                  <td>{{getPlayerStatsTotals(player.id, "touches")}}</td>
+              </tr>
+            </tbody>
         </table>
     </div>
   </body>
