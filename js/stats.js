@@ -3,13 +3,11 @@ var app = angular.module('myApp', []);
 app.controller('MainCtrl', function($scope) {
 
     angular.element(document).ready(function () {
-        $('#statTable').DataTable();
+        $('#statTable').DataTable({
+          bPaginate: false,
+          bAutoWidth: false,
+        });
     });
-
-    $scope.getUserImageURL = function() {
-        return "img/userimages/" + $scope.selectedUser.image;
-    }
-
 
   $scope.players = [
       {
@@ -138,111 +136,6 @@ app.controller('MainCtrl', function($scope) {
           "image": "user_amanda.jpg",
       },
   ];
-
-
-  $scope.getAllStatsForTournamentID = function(tourneyID) {
-      var returnStats = Array();
-      for (var tournament of $scope.allStats){
-          if (tournament.id == tourneyID){
-              angular.forEach(tournament.games, function(gamestats, gameID) {
-                  returnStats.push(gamestats);
-              });
-          }
-      }
-
-      return returnStats;
-  };
-
-  $scope.getPlayerStatsTotals = function(player_id, statType) {
-      var num = 0;
-      num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_JW, player_id, statType);
-       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_DISH, player_id, statType);
-       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_SIEGE, player_id, statType);
-       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_PPF, player_id, statType);
-       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_CLE, player_id, statType);
-       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_HEIST, player_id, statType);
-      return num;
-
-  };
-
-  $scope.getPlayerPointTotalFromSubSheets = function(player_id) {
-      var num = 0;
-      angular.forEach($scope.subsheet_CHC2016_JW.points, function(points, pointnum) {
-          if (points.players.indexOf(player_id) >= 0){
-            num++;
-          }
-      });
-      angular.forEach($scope.subsheet_CHC2016_DISH.points, function(points, pointnum) {
-          if (points.players.indexOf(player_id) >= 0){
-            num++;
-          }
-      });
-      angular.forEach($scope.subsheet_CHC2016_SIEGE.points, function(points, pointnum) {
-          if (points.players.indexOf(player_id) >= 0){
-            num++;
-          }
-      });
-      angular.forEach($scope.subsheet_CHC2016_PPF.points, function(points, pointnum) {
-          if (points.players.indexOf(player_id) >= 0){
-            num++;
-          }
-      });
-      angular.forEach($scope.subsheet_CHC2016_CLE.points, function(points, pointnum) {
-          if (points.players.indexOf(player_id) >= 0){
-            num++;
-          }
-      });
-      angular.forEach($scope.subsheet_CHC2016_HEIST.points, function(points, pointnum) {
-          if (points.players.indexOf(player_id) >= 0){
-            num++;
-          }
-      });
-      return num;
-  };
-
-  $scope.getPlayerStatsForGame = function (gameStats, player_id, statType) {
-      var statsStringSplit = Array();
-      var statsString = "";
-      for (statline of gameStats){
-          if (statline.player_id == player_id) {
-              statsString = statline.stats_string;
-              statsStringSplit =  statline.stats_string.split("_");
-          }
-      }
-
-      if (statType == "pointsPlayed") {
-          return statsStringSplit.length;
-      }
-      else if (statType == "turns") {
-          return $scope.countSymbolInString(statsString, "T");
-      }
-      else if (statType == "scores") {
-          return $scope.countSymbolInString(statsString, "S");
-      }
-      else if (statType == "assists") {
-          return $scope.countSymbolInString(statsString, "A");
-      }
-      else if (statType == "touches") {
-          return $scope.countSymbolInString(statsString.replace(/\*/g,"u"), "u");
-      }
-      else if (statType == "ds") {
-          return $scope.countSymbolInString(statsString, "D");
-      }
-
-
-      return "";
-
-  };
-
-  $scope.countSymbolInString = function(str, symbol) {
-      var re = new RegExp(symbol, 'g');
-      if (str.match(re)) {
-          return str.match(re).length;
-      }
-      else {
-            return 0;
-      }
-  }
 
   $scope.playerstats_CHC2016_JW = [
       { "player_id": 18, "stats_string": "1*_3*_5_8***_10***A_12*_14*_15A_17" },
@@ -567,6 +460,172 @@ app.controller('MainCtrl', function($scope) {
       }
   };
 
+
+    $scope.tournyNames = [
+    { 
+      name: "Totals",
+      id: 1 
+    },
+    { 
+      name: "CHC",
+      id: 2,
+      games: [{
+        name: "All", 
+        id: 0
+      },
+      {
+        name: "1-Jackwagon", 
+        id: 1
+      },
+      {
+        name: "2-Dish", 
+        id: 2
+      },
+      {
+        name: "3-Siege", 
+        id: 3
+      },
+      {
+        name: "4-PPF", 
+        id: 4
+      },
+      {
+        name: "5-CLE", 
+        id: 5
+      },
+      {
+        name: "6-Heist", 
+        id: 6
+      }]
+    },
+    { 
+      name: "ESC",
+      id: 3
+    }];
+
+
+    $scope.selectedGameStats = $scope.playerstats_CHC2016_SIEGE
+    $scope.selectedTourny = $scope.tournyNames[1];
+    $scope.selectedGame = $scope.tournyNames[1].games[0];
+    
+
+    $scope.getTournyStats = function(id){
+      console.log("tourny" + $scope.selectedTourny.id);
+    }
+
+    $scope.getGameStats = function(id){
+      //if games in the tourny exist
+      console.log("game: " + $scope.selectedGame.id);
+    }
+
+    $scope.getUserImageURL = function() {
+        return "img/userimages/" + $scope.selectedUser.image;
+    }
+
+
+  $scope.getAllStatsForTournamentID = function(tourneyID) {
+      var returnStats = Array();
+      for (var tournament of $scope.allStats){
+          if (tournament.id == tourneyID){
+              angular.forEach(tournament.games, function(gamestats, gameID) {
+                  returnStats.push(gamestats);
+              });
+          }
+      }
+
+      return returnStats;
+  };
+
+  $scope.getPlayerStatsTotals = function(player_id, statType) {
+      var num = 0;
+      num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_JW, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_DISH, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_SIEGE, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_PPF, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_CLE, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_HEIST, player_id, statType);
+      return num;
+
+  };
+
+  $scope.getPlayerPointTotalFromSubSheets = function(player_id) {
+      var num = 0;
+      angular.forEach($scope.subsheet_CHC2016_JW.points, function(points, pointnum) {
+          if (points.players.indexOf(player_id) >= 0){
+            num++;
+          }
+      });
+      angular.forEach($scope.subsheet_CHC2016_DISH.points, function(points, pointnum) {
+          if (points.players.indexOf(player_id) >= 0){
+            num++;
+          }
+      });
+      angular.forEach($scope.subsheet_CHC2016_SIEGE.points, function(points, pointnum) {
+          if (points.players.indexOf(player_id) >= 0){
+            num++;
+          }
+      });
+      angular.forEach($scope.subsheet_CHC2016_PPF.points, function(points, pointnum) {
+          if (points.players.indexOf(player_id) >= 0){
+            num++;
+          }
+      });
+      angular.forEach($scope.subsheet_CHC2016_CLE.points, function(points, pointnum) {
+          if (points.players.indexOf(player_id) >= 0){
+            num++;
+          }
+      });
+      angular.forEach($scope.subsheet_CHC2016_HEIST.points, function(points, pointnum) {
+          if (points.players.indexOf(player_id) >= 0){
+            num++;
+          }
+      });
+      return num;
+  };
+
+  $scope.getPlayerStatsForGame = function (gameStats, player_id, statType) {
+      var statsStringSplit = Array();
+      var statsString = "";
+      for (statline of gameStats){
+          if (statline.player_id == player_id) {
+              statsString = statline.stats_string;
+              statsStringSplit =  statline.stats_string.split("_");
+          }
+      }
+
+      if (statType == "pointsPlayed") {
+          return statsStringSplit.length;
+      }
+      else if (statType == "turns") {
+          return $scope.countSymbolInString(statsString, "T");
+      }
+      else if (statType == "scores") {
+          return $scope.countSymbolInString(statsString, "S");
+      }
+      else if (statType == "assists") {
+          return $scope.countSymbolInString(statsString, "A");
+      }
+      else if (statType == "touches") {
+          return $scope.countSymbolInString(statsString.replace(/\*/g,"u"), "u");
+      }
+      else if (statType == "ds") {
+          return $scope.countSymbolInString(statsString, "D");
+      }
+
+
+      return "";
+
+  };
+
+  $scope.countSymbolInString = function(str, symbol) {
+      var re = new RegExp(symbol, 'g');
+      if (str.match(re)) {
+          return str.match(re).length;
+      }
+      else {
+            return 0;
+      }
+  }
 
   $scope.allStats = [{"year": 2016,
                       "tournamentID": "CHC2016",

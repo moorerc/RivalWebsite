@@ -28,18 +28,25 @@
     <!-- Data Tables -->
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" rel="stylesheet" />
+
 
   </head>
 
 
   <body class="stats" ng-controller="MainCtrl">
-    <div style="height:100%; padding:20px;">
-        <table id="statTable" class="table table-hover table-condensed" style="width:45%">
+      <div> {{selectedTourny.name}} Stats
+          <select ng-options="tournyName.name for tournyName in tournyNames track by tournyName.id" ng-model="selectedTourny" ng-change="getTournyStats()"></select>
+          Game:
+          <select ng-options="game.name for game in selectedTourny.games track by game.id" ng-model="selectedGame" ng-change="getGameStats()"></select>
+      </div>
+      <div style="height:100%; padding:20px;">
+        <table id="statTable" class="table table-hover table-condensed">
           <thead>
             <tr>
               <td>Name</td>
               <td>Stat Totals</td>
-              <td>Points Played</td>
+              <!--<td>Points Played</td>-->
               <td>Turns</td>
               <td>Scores</td>
               <td>Assists</td>
@@ -48,6 +55,18 @@
             </tr>
           </thead>
           <tbody>
+              <tr ng-repeat="player in players" ng-model="selectedGameStats">
+                  <td>{{player.name}}</td>
+                  <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "pointsPlayed")}}</td>
+                  <!--<td>{{getPlayerPointTotalFromSubSheets(player.id)}}-->
+                  <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "turns")}}</td>
+                  <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "scores")}}</td>
+                  <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "assists")}}</td>
+                  <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "ds")}}</td>
+                  <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "touches")}}</td>
+              </tr>
+            </tbody>
+          <!-- <tbody>
               <tr ng-repeat="player in players">
                   <td>{{player.name}}</td>
                   <td>{{getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
@@ -58,8 +77,9 @@
                   <td>{{getPlayerStatsTotals(player.id, "ds")}}</td>
                   <td>{{getPlayerStatsTotals(player.id, "touches")}}</td>
               </tr>
-            </tbody>
+            </tbody> -->
         </table>
+      </div>
     </div>
   </body>
 </html>

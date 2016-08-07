@@ -273,8 +273,8 @@ app.controller('ResultsCtrl', function($scope) {
                   },
                   {
                       "gamenum": 6,
-                      "opponent": "Finals",
-                      "type": "Hesit",
+                      "opponent": "Heist",
+                      "type": "Finals",
                       "score_us": 11,
                       "score_them": 13,
                   },
