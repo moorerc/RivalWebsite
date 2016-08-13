@@ -137,6 +137,21 @@ app.controller('MainCtrl', function($scope) {
   ];
 
 
+
+  $scope.selectedSubSheet = $scope.subsheet_CHC2016_HEIST;
+
+  $scope.totalPointsInSubsheet = function() {
+
+      return 6;
+
+  }
+
+
+
+
+
+
+
   $scope.getAllStatsForTournamentID = function(tourneyID) {
       var returnStats = Array();
       for (var tournament of $scope.allStats){

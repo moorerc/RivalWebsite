@@ -56,7 +56,7 @@
                 <td>{{getPlayerStatsTotals(player.id, "turns")/getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
             </tr>
         </table>-->
-        <table class="table table-hover table-condensed" style="width:45%">
+        <!--<table class="table table-hover table-condensed" style="width:45%">
             <tr>
                 <td>NAME</td>
                 <td ng-repeat="point in generateStatSheet()">{{$index}}</td>
@@ -65,8 +65,12 @@
                 <td>{{player.name}}</td>
                 <td ng-repeat="point in generateStatSheet()">x</td>
             </tr>
-        </table>
-        {{generateStatSheet()}}
+        </table>-->
+        <!--{{generateStatSheet()}}-->
+
+        <!--{{selectedSubSheet}}-->
+        {{totalPointsInSubsheet()}}
+
     </div>
   </body>
 </html>

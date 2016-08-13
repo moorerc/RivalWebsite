@@ -238,7 +238,27 @@ app.controller('MainCtrl', function($scope) {
   "created": "",
   "created_by": 31
 },
-
+{
+  "id": 120,
+  "title": "RAK",
+  "image": "badge_heart.png",
+  "description": "Complete a random act of kindness for a Rival teammate/coach. Share evidence (photo or description) of the act you've committed or award badge credit to someone for an act you received via slack.",
+  "created_by": 8
+},
+{
+  "id": 121,
+  "title": "Decathlon",
+  "image": "badge_torch.png",
+  "description": "Complete each of the following exercises (see email) in succession as fast as possible. Exercises can be completed in any order but full quantity must be completed before switching. Post a before and after photo along with your time as evidence of completion to slack.",
+  "created_by": 8
+},
+{
+  "id": 122,
+  "title": "Pokemon No",
+  "image": "badge_pokeball.png",
+  "description": "Catch someone else (stranger/teammate/etc) playing Pokemon Go. Take a selfie with them in the shot and post to slack. No credit if player catches you in the act.",
+  "created_by": 8
+},
 
   ];
 
@@ -263,6 +283,16 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469315520000",
                   "details":"vs Traffic"
               },
+              {
+                  "id":118,
+                  "date_earned":"1470005460000",
+                  "details":"Brittany, Sophie"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1470009840000",
+                  "details":"West Virginia"
+              },
 
           ]
       },
@@ -286,6 +316,17 @@ app.controller('MainCtrl', function($scope) {
                 "date_earned":"1469588760000",
                 "details":"vs Fury/Nightlock"
             },
+            {
+                "id":113,
+                "date_earned":"1469278800000",
+                "details":"CHC Snacks"
+            },
+            {
+                "id":109,
+                "date_earned":"1469278800000",
+                "details":"CHC Stats Team"
+            },
+
         ]
       },
       {
@@ -331,6 +372,16 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1468985880000",
                     "details":""
               },
+              {
+                  "id":109,
+                  "date_earned":"1469278800000",
+                  "details":"CHC Stats Team"
+              },
+              {
+                  "id":118,
+                  "date_earned":"1469999640000",
+                  "details":"Tots"
+              },
 
           ]
       },
@@ -355,6 +406,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":115,
                   "date_earned":"1469315520000",
                   "details":"vs Traffic"
+              },
+              {
+                  "id":109,
+                  "date_earned":"1469278800000",
+                  "details":"CHC Stats Team"
               },
           ]
       },
@@ -408,6 +464,16 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469588520000",
                   "details":"vs Fury/Nightlock"
               },
+              {
+                  "id":118,
+                  "date_earned":"1470003780000",
+                  "details":"Sara Scott, Butts, Kristen, Jules, Zeus"
+              },
+              {
+                  "id":103,
+                  "date_earned":"1470704220000",
+                  "details":"New Record - 3:20"
+              },
 
           ]
       },
@@ -420,6 +486,16 @@ app.controller('MainCtrl', function($scope) {
                   "id":109,
                   "date_earned":"1466292600000",
                   "details":"Captain"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1470262080000",
+                  "details":"Montana"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1470262020000",
+                    "details":""
               },
           ]
       },
@@ -542,6 +618,11 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469934360000",
                   "details":"Buddy Bonding"
               },
+              {
+                  "id":119,
+                  "date_earned":"1470003360000",
+                  "details":"Colorado"
+              },
           ]
       },
       {
@@ -578,6 +659,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":116,
                   "date_earned":"1469587560000",
                   "details":"Silent Disco"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1470061500000",
+                    "details":""
               },
           ]
       },
@@ -658,6 +744,11 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469238720000",
                   "details":"Swap Horses"
               },
+              {
+                  "id":119,
+                  "date_earned":"1470009540000",
+                  "details":"Ohio"
+              },
           ]
       },
       {
@@ -679,7 +770,12 @@ app.controller('MainCtrl', function($scope) {
                   "id":101,
                   "date_earned":"1468628100000",
                   "details":"Google Hangout with Tots"
-              }
+              },
+              {
+                  "id":115,
+                  "date_earned":"1470701400000",
+                  "details":"vs Scandal"
+              },
           ]
       },
       {
@@ -707,6 +803,11 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469588580000",
                   "details":"vs Fury/Nightlock"
               },
+              {
+                  "id":118,
+                  "date_earned":"1470141300000",
+                  "details":"Sadie"
+              },
           ]
       },
       {
@@ -723,6 +824,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":108,
                   "date_earned":"1469300580000",
                   "details":"Red Wagon"
+              },
+              {
+                  "id":109,
+                  "date_earned":"1469278800000",
+                  "details":"CHC Stats Team"
               },
           ]
       },
@@ -756,6 +862,11 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469587560000",
                   "details":"Silent Disco"
               },
+              {
+                  "id":119,
+                  "date_earned":"1470012960000",
+                  "details":"Michigan"
+              },
           ]
       },
       {
@@ -788,6 +899,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":115,
                   "date_earned":"1469315520000",
                   "details":"vs Traffic"
+              },
+              {
+                  "id":118,
+                  "date_earned":"1470249120000",
+                  "details":"Sadie"
               },
           ]
       },
@@ -862,6 +978,16 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469934360000",
                   "details":"Buddy Bonding"
               },
+              {
+                  "id":118,
+                  "date_earned":"1470003960000",
+                  "details":"Tots, Kristen, Jules, TLo"
+              },
+              {
+                  "id":112,
+                  "date_earned":"1470068220000",
+                  "details":""
+              },
           ]
       },
       {
@@ -888,6 +1014,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":116,
                   "date_earned":"1469587560000",
                   "details":"Silent Disco"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1470012960000",
+                  "details":"Michigan"
               },
           ]
       },
