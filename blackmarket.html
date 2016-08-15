@@ -1,0 +1,183 @@
+<html ng-app="myApp">
+
+  <head>
+  	<title>Rival Ultimate</title>
+
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+
+  	<link rel="stylesheet" type="text/css" href="style.css">
+
+  	<link rel="icon" type="image/png" href="img/icons/RivalFavicon_64Circle.png">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/blackmarket.js"></script>
+
+  	<!-- Latest compiled and minified CSS -->
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  	<!-- jQuery library -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  	<!-- Latest compiled JavaScript -->
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </head>
+
+
+  <body class="badgequest" ng-controller="MainCtrl" style="background-color:black; color:white;">
+    <div style="height:100%; padding:20px;">
+        <div class="col-sm-3" style="height:100%; padding-top:80px; padding-bottom:50px; background-color:black;">
+            <div class="" style="text-align:center; /*color:white; background-color:#D4AF37;*/">
+                <h3>LEADERBOARD</h3>
+            </div>
+            <div class="panel panel-default" style="height:90%; overflow:scroll; background-color:black !important;">
+                <ul class="list-group">
+                    <li class="list-group-item user-list-item" style="background-color:black !important;" ng-repeat="user in users | orderBy:'badges.length':true" ng-click="selectUser(user.id)">
+                        <span class="badge" ng-class="{badgegold: ($index == 0), badgesilver: ($index == 1), badgebronze: ($index == 2)}">
+                            <img ng-if="$index < 3" src={{"img/Rlogo.png"}} alt="..." style="height:10px; width:10px; margin-right:5px; filter:invert(100%); -webkit-filter:invert(100%);">
+                            {{$index + 1}}
+                        </span>
+                        <img class="media-object" src={{"img/userimages/"+user.image}} alt="..." style="height:60px; width:60px; border-radius:50%;">
+                        <div style="position:absolute; top:0; left:0; height:100%; width:100%; padding-left: 100px; padding-top:10px;">
+                            <h5>{{user.name | uppercase}}</h5>
+                            <span>Badges Earned: {{user.badges.length}}</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6" style="height:100%;">
+            <span style="text-align:center"><h1><img src={{"img/Rlogo.png"}} alt="..." style="height:40px; width:40px; margin-right:15px;">BADGE QUEST 2016</h1></span>
+            <div class="btn-group btn-group-justified" role="group" aria-label="..." style="padding-top:20px;">
+              <div class="btn-group" role="group">
+                <button style="background-color:black; border-color:white; color:white;" type="button" class="btn btn-default" ng-click="selectView('overall')" ng-class="{activetab: (currentView === 'overall')}">Team Stats</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button style="background-color:black; border-color:white; color:white;" type="button" class="btn btn-default" ng-click="selectView('user')" ng-class="{activetab: (currentView === 'user')}">Individual Details</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button style="background-color:black; border-color:white; color:white;" type="button" class="btn btn-default" ng-click="selectView('badge')" ng-class="{activetab: (currentView === 'badge')}">Badge Details</button>
+              </div>
+            </div>
+            <div class="panel panel-default" style="margin-top:10px; height:78%; overflow:scroll; background-color:black !important;">
+              <div class="panel-body" ng-if="currentView == 'overall'">
+                <div style="margin-left:auto; margin-right:auto; display:block; width:100%; text-align:center; margin-top:60px; margin-bottom:20px;">
+                    <img src={{"img/Rlogo.png"}} alt="..." style="height:150px; width:150px; filter:invert(80%); -webkit-filter:invert(80%);">
+                </div>
+                <div style="width:100%; display:block; text-align:center;">
+                    <span style="font-size:20px; color:white !important;">{{"Coming Soon!" | uppercase }}</span>
+                </div>
+              </div>
+              <div class="panel-body" ng-if="currentView == 'user'">
+                  <span ng-if="!selectedUser">
+                    <div style="margin-left:auto; margin-right:auto; display:block; width:100%; text-align:center; margin-top:60px; margin-bottom:20px;">
+                        <img src={{"img/Rlogo.png"}} alt="..." style="height:150px; width:150px; filter:invert(80%); -webkit-filter:invert(80%);">
+                    </div>
+                    <div style="width:100%; display:block; text-align:center;">
+                        <span style="font-size:20px; font-color:white;">{{"SELECT A USER FROM THE PANEL ON THE LEFT" | uppercase }}</span>
+                    </div>
+                </span>
+
+                  <span ng-if="selectedUser">
+                    <div style="width:100%; border-bottom: 1px solid lightgray; height:150px; padding-bottom:20px; padding-top:10px;">
+                        <div class="col-sm-3" ng-style="{'background-image': 'url(' + getUserImageURL() + ')'}" alt="..." style="padding:10px; background-size:cover; border-radius:10%; height:120px; width:120px; background-position: center; "></div>
+                    </div>
+                    <div class="container-badges">
+                        <div class="mini-badge" ng-repeat="badge in badges">
+                            <img src={{"img/badgeimages/"+badge.image}} ng-class="{badgegray: !selectedUserHasBadge(badge.id)}">
+                        </div>
+                    </div>
+                    <div class="container-history">
+                        <div class="panel panel-default">
+                          <!-- Table -->
+                          <table class="table" style="font-size:10px;">
+                              <thead style="font-weight:bold;">
+                                <td>Badge</td>
+                                <td>Date Earned</td>
+                                <td>Notes</td>
+                              </thead>
+                            <tbody>
+                                <tr ng-repeat="badge in selectedUser.badges | orderBy:'date_earned'">
+                                    <td>{{getBadgeTitleById(badge.id)}}</td>
+                                    <td>{{badge.date_earned | date:'MMM dd, HH:mm:ss'}}</td>
+                                    <td>{{badge.details}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </span>
+              </div>
+              <div class="panel-body" ng-if="currentView == 'badge'" style="">
+                  <span ng-if="!selectedBadge">
+                    <div style="margin-left:auto; margin-right:auto; display:block; width:100%; text-align:center; margin-top:60px; margin-bottom:20px;">
+                        <img src={{"img/Rlogo.png"}} alt="..." style="height:150px; width:150px; filter:invert(80%); -webkit-filter:invert(80%);">
+                    </div>
+                    <div style="width:100%; display:block; text-align:center;">
+                        <span style="font-size:20px">{{"SELECT A BADGE FROM THE PANEL ON THE RIGHT" | uppercase }}</span>
+                    </div>
+                </span>
+                <span ng-if="selectedBadge">
+                    <div style="width:100%; height:110px; position:relative; border-bottom: 1px solid lightgray; padding-bottom:15px;">
+                        <img src={{"img/badgeimages/"+selectedBadge.image}} alt="..." style="height:100px; width:100px; margin:5px; border-radius:50%; padding:5px;" />
+                        <div style="position:absolute; top:0; left:0; width:100%; height:100%; padding-left:130px; padding-top:15px; padding-bottom:15px; padding-right:15px;">
+                            <div style="font-size:18px; width:100%;">{{selectedBadge.title | uppercase}}</div>
+                            <div style="font-size:12px; margin-top:10px;">
+                                {{selectedBadge.description}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-badges">
+                        <div class="mini-badge" ng-repeat="user in users">
+                            <img src={{"img/userimages/"+user.image}} ng-class="{badgegray: !userHasSelectedBadge($index)}">
+                        </div>
+                    </div>
+                    <div class="container-history">
+                        <div class="panel panel-default">
+                          <!-- Table -->
+                          <table class="table" style="font-size:10px;">
+                              <thead style="font-weight:bold;">
+                                <td>User</td>
+                                <td>Date Earned</td>
+                                <td>Notes</td>
+                              </thead>
+                            <tbody>
+                                <tr ng-repeat="row in selectedBadgeHistory | orderBy:'date'">
+                                    <td>{{row.user}}</td>
+                                    <td>{{row.date | date:'MMM dd, HH:mm:ss'}}</td>
+                                    <td>{{row.details}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                <span>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-3" style="height:100%; padding-top:80px; padding-bottom:50px;">
+            <div class="" style=" text-align:center;">
+                <h3>THE BADGES</h3>
+            </div>
+            <div class="panel panel-default" style="height:90%; overflow:scroll; background-color:black !important;">
+                <div class="col-sm-6" style="padding-top:10px; padding-left:0; padding-right:0;">
+                    <div class="container_badges" ng-repeat="badge in badges" ng-if="$even" ng-click="selectBadge($index)" style="padding-bottom:5px; padding-top:5px; width:75%; float:right; text-align:center;">
+                        <img src={{"img/badgeimages/"+badge.image}} alt="..." style="height:80px; width:80px; border-radius:50%;">
+                    </div>
+                </div>
+                <div class="col-sm-6" style="padding-top:60px; padding-left:0; padding-right:0;">
+                    <div class="container_badges" ng-repeat="badge in badges" ng-if="$odd" ng-click="selectBadge($index)" style="padding-bottom:5px; padding-top:5px; width:75%; float:left; text-align:center;">
+                        <img src={{"img/badgeimages/"+badge.image}} alt="..." style="height:80px; width:80px; border-radius:50%;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+  </body>
+</html>
