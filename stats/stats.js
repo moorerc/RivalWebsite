@@ -3,6 +3,13 @@ var app = angular.module('myApp', []);
 app.controller('MainCtrl', function($scope) {
 
 
+    angular.element(document).ready(function () {
+        $('#statTable').DataTable({
+          bPaginate: false,
+          bAutoWidth: false,
+        });
+    });
+
     $scope.getUserImageURL = function() {
         return "img/userimages/" + $scope.selectedUser.image;
     }
@@ -146,12 +153,6 @@ app.controller('MainCtrl', function($scope) {
 
   }
 
-
-
-
-
-
-
   $scope.getAllStatsForTournamentID = function(tourneyID) {
       var returnStats = Array();
       for (var tournament of $scope.allStats){
@@ -173,12 +174,12 @@ app.controller('MainCtrl', function($scope) {
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_PPF, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_CLE, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_HEIST, player_id, statType);
-      /* num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_GMG, player_id, statType);
+        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_GMG, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_SB, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_OZONE, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HEIST, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_NEMESIS, player_id, statType);
-        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HM, player_id, statType);*/
+        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HM, player_id, statType);
       return num;
 
   };
@@ -278,6 +279,8 @@ app.controller('MainCtrl', function($scope) {
             num++;
           }
       });
+      //get points of other game through stat sheet instead of sub sheet
+
       return num;
   };
 
