@@ -2,12 +2,18 @@ var app = angular.module('myApp', []);
 
 app.controller('MainCtrl', function($scope) {
 
+
     angular.element(document).ready(function () {
         $('#statTable').DataTable({
           bPaginate: false,
           bAutoWidth: false,
         });
     });
+
+    $scope.getUserImageURL = function() {
+        return "img/userimages/" + $scope.selectedUser.image;
+    }
+
 
   $scope.players = [
       {
@@ -138,7 +144,8 @@ app.controller('MainCtrl', function($scope) {
   ];
 
 
-  $scope.selectedSubSheet = $scope.subsheet_ESC2016_GMG;
+
+  $scope.selectedSubSheet = $scope.subsheet_CHC2016_HEIST;
 
   $scope.totalPointsInSubsheet = function() {
 
@@ -167,12 +174,12 @@ app.controller('MainCtrl', function($scope) {
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_PPF, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_CLE, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_HEIST, player_id, statType);
-      /* num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_GMG, player_id, statType);
+        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_GMG, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_SB, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_OZONE, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HEIST, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_NEMESIS, player_id, statType);
-        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HM, player_id, statType);*/
+        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HM, player_id, statType);
       return num;
 
   };
@@ -272,6 +279,8 @@ app.controller('MainCtrl', function($scope) {
             num++;
           }
       });
+      //get points of other game through stat sheet instead of sub sheet
+
       return num;
   };
 
@@ -790,67 +799,6 @@ app.controller('MainCtrl', function($scope) {
       }
   };
 
-
-    $scope.tournyNames = [
-    { 
-      name: "Totals",
-      id: 1 
-    },
-    { 
-      name: "CHC",
-      id: 2,
-      games: [{
-        name: "All", 
-        id: 0
-      },
-      {
-        name: "1-Jackwagon", 
-        id: 1
-      },
-      {
-        name: "2-Dish", 
-        id: 2
-      },
-      {
-        name: "3-Siege", 
-        id: 3
-      },
-      {
-        name: "4-PPF", 
-        id: 4
-      },
-      {
-        name: "5-CLE", 
-        id: 5
-      },
-      {
-        name: "6-Heist", 
-        id: 6
-      }]
-    },
-    { 
-      name: "ESC",
-      id: 3
-    }];
-
-
-    $scope.selectedGameStats = $scope.playerstats_CHC2016_SIEGE
-    $scope.selectedTourny = $scope.tournyNames[1];
-    $scope.selectedGame = $scope.tournyNames[1].games[0];
-    
-
-    $scope.getTournyStats = function(id){
-      console.log("tourny" + $scope.selectedTourny.id);
-    }
-
-    $scope.getGameStats = function(id){
-      //if games in the tourny exist
-      console.log("game: " + $scope.selectedGame.id);
-    }
-
-    $scope.getUserImageURL = function() {
-        return "img/userimages/" + $scope.selectedUser.image;
-    }
 
   $scope.allStats = [{"year": 2016,
                       "tournamentID": "CHC2016",

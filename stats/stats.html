@@ -41,12 +41,12 @@
           <select ng-options="game.name for game in selectedTourny.games track by game.id" ng-model="selectedGame" ng-change="getGameStats()"></select>
       </div>
       <div style="height:100%; padding:20px;">
-        <table id="statTable" class="table table-hover table-condensed">
+        <table id="statTable" class="table table-hover table-condensed" >
           <thead>
             <tr>
               <td>Name</td>
               <td>Stat Totals</td>
-              <!--<td>Points Played</td>-->
+              <td>Points Played</td>
               <td>Turns</td>
               <td>Scores</td>
               <td>Assists</td>
@@ -54,19 +54,19 @@
               <td>Touches</td>
             </tr>
           </thead>
-          <tbody>
+          <!--<tbody>
               <tr ng-repeat="player in players" ng-model="selectedGameStats">
                   <td>{{player.name}}</td>
                   <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "pointsPlayed")}}</td>
-                  <!--<td>{{getPlayerPointTotalFromSubSheets(player.id)}}-->
+                  <td>{{getPlayerPointTotalFromSubSheets(player.id)}}
                   <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "turns")}}</td>
                   <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "scores")}}</td>
                   <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "assists")}}</td>
                   <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "ds")}}</td>
                   <td>{{getPlayerStatsForGame(selectedGameStats, player.id, "touches")}}</td>
               </tr>
-            </tbody>
-          <!-- <tbody>
+            </tbody>-->
+          <tbody>
               <tr ng-repeat="player in players">
                   <td>{{player.name}}</td>
                   <td>{{getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
@@ -77,7 +77,7 @@
                   <td>{{getPlayerStatsTotals(player.id, "ds")}}</td>
                   <td>{{getPlayerStatsTotals(player.id, "touches")}}</td>
               </tr>
-            </tbody> -->
+            </tbody> 
         </table>
       </div>
     <div style="height:100%; padding:20px;">

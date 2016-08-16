@@ -78,6 +78,42 @@ app.controller('MainCtrl', function($scope) {
     }
 
   $scope.badges = [
+      {
+        "id": 500,
+        "title": "No Captains, No Rules",
+        "image": "badge_norules.jpg",
+        "description": "Ignore a captains instructions",
+      },
+      {
+        "id": 501,
+        "title": "Tot's Time",
+        "image": "badge_late.png",
+        "description": "Secretly make Tots late",
+      },
+      {
+        "id": 502,
+        "title": "Car Swiper",
+        "image": "badge_thief.png",
+        "description": "Steal a car",
+      },
+      {
+        "id": 503,
+        "title": "Car Show",
+        "image": "badge_wheel.jpg",
+        "description": "Visit all team cars at a tournament or practice",
+      },
+      {
+        "id": 504,
+        "title": "Pants Party",
+        "image": "badge_pants.png",
+        "description": "Pants Stevie or Tots",
+      },
+      {
+        "id": 505,
+        "title": "Car Topper",
+        "image": "badge_cartopper.jpg",
+        "description": "Sit on top of all team cars at a tournament or practice",
+      }
   ];
 
   $scope.users = [
@@ -86,7 +122,7 @@ app.controller('MainCtrl', function($scope) {
           "name": "sadie",
           "image": "user_sadie.jpg",
           "badges": [
-
+            {id: 502}, {id: 504}
           ]
       },
       {
@@ -121,7 +157,7 @@ app.controller('MainCtrl', function($scope) {
           "name": "stevie",
           "image": "user_stevie.jpg",
           "badges": [
-
+            {id: 500}
           ]
       },
       {
@@ -163,7 +199,7 @@ app.controller('MainCtrl', function($scope) {
           "name": "t-lo",
           "image": "user_tlo.jpg",
           "badges": [
-
+            {id: 502}, {id: 503}, {id: 505}
           ]
       },
       {
@@ -171,7 +207,7 @@ app.controller('MainCtrl', function($scope) {
           "name": "zeus",
           "image": "user_zeus.jpg",
           "badges": [
-
+            {id: 500}, {id: 502}
           ]
       },
       {
@@ -211,7 +247,7 @@ app.controller('MainCtrl', function($scope) {
           "name": "sophie",
           "image": "user_sophie.jpg",
           "badges": [
-
+            {id: 500}, {id: 503}, {id: 505}
           ]
       },
       {
