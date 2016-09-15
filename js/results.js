@@ -281,7 +281,159 @@ app.controller('ResultsCtrl', function($scope) {
 
               ]
           },
+          {
+              "tourneyid": 4,
+              "sanctioned": true,
+              "name": "Select Flight Invite",
+              "teampic": "img/SFI2016_TeamPhoto.JPG",
+              "date": "August 13-14, 2016",
+              "location": "Westfield, IN",
+              "result": "Second Place",
+              "infolink": "http://play.usaultimate.org/events/TCT-Select-Flight-Invite-2016/schedule/Women/Club-Women/",
+              "mapslink": "https://goo.gl/maps/2YMzesnjqFo",
+              "games": [
+                  {
+                      "gamenum": 1,
+                      "opponent": "Elevate",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 6,
+                  },
+                  {
+                      "gamenum": 2,
+                      "opponent": "Snap",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 6,
+                  },
+                  {
+                      "gamenum": 3,
+                      "opponent": "Encore",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 4,
+                  },
+                  {
+                      "gamenum": 4,
+                      "opponent": "Wicked",
+                      "type": "Quarters",
+                      "score_us": 12,
+                      "score_them": 2,
+                  },
+                  {
+                      "gamenum": 5,
+                      "opponent": "Pop",
+                      "type": "Semis",
+                      "score_us": 11,
+                      "score_them": 10,
+                  },
+                  {
+                      "gamenum": 6,
+                      "opponent": "6ixers",
+                      "type": "Finals",
+                      "score_us": 10,
+                      "score_them": 11,
+                  },
 
+              ]
+          },
+          {
+              "tourneyid": 5,
+              "sanctioned": true,
+              "name": "East Plains Sectionals",
+              "teampic": "img/RCircleLogo_Small.png",
+              "date": "August 27-28, 2016",
+              "location": "Versailles, OH",
+              "result": "First Place",
+              "infolink": "http://play.usaultimate.org/events/East-Plains-Womens-Sectionals-2016/schedule/Women/Club-Women/",
+              "mapslink": "https://goo.gl/maps/GGrE4y45piJ2",
+              "games": [
+                  {
+                      "gamenum": 1,
+                      "opponent": "Sureshot",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 4,
+                  },
+                  {
+                      "gamenum": 2,
+                      "opponent": "Dayton",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 0,
+                  },
+                  {
+                      "gamenum": 3,
+                      "opponent": "Notorious C.L.E",
+                      "type": "Pool Play",
+                      "score_us": 10,
+                      "score_them": 7,
+                  }
+              ]
+          },
+          {
+              "tourneyid": 6,
+              "sanctioned": true,
+              "name": "Great Lakes Regionals",
+              "teampic": "img/Regionals2016_Selfie.JPG",
+              "date": "September 10-11, 2016",
+              "location": "Rockford, IL",
+              "result": "First Place",
+              "infolink": "http://play.usaultimate.org/events/Great-Lakes-Womens-Regionals-2016/schedule/Women/Club-Women/",
+              "mapslink": "https://goo.gl/maps/5mwkVHyj7Ls",
+              "games": [
+                  {
+                      "gamenum": 1,
+                      "opponent": "Notorious C.L.E.",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 4,
+                  },
+                  {
+                      "gamenum": 2,
+                      "opponent": "Nemesis",
+                      "type": "Pool Play",
+                      "score_us": 12,
+                      "score_them": 8,
+                  },
+                  {
+                      "gamenum": 3,
+                      "opponent": "Dish",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 6,
+                  },
+                  {
+                      "gamenum": 4,
+                      "opponent": "Sureshot",
+                      "type": "Pool Play",
+                      "score_us": 12,
+                      "score_them": 1,
+                  },
+                  {
+                      "gamenum": 5,
+                      "opponent": "Frenzy",
+                      "type": "Pool Play",
+                      "score_us": 13,
+                      "score_them": 3,
+                  },
+                  {
+                      "gamenum": 6,
+                      "opponent": "Dish",
+                      "type": "Semis",
+                      "score_us": 15,
+                      "score_them": 3,
+                  },
+                  {
+                      "gamenum": 7,
+                      "opponent": "Nemesis",
+                      "type": "Finals",
+                      "score_us": 15,
+                      "score_them": 10,
+                  }
+
+              ]
+          }
     ];
 
       $scope.tournaments2015 = [
