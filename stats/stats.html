@@ -81,32 +81,31 @@
         </table>
       </div>
     <div style="height:100%; padding:20px;">
-        <!--<table class="table table-hover table-condensed" style="width:45%">
+        <table class="table table-hover table-condensed" style="width:45%">
             <tr >
                 <td>NAME</td>
-                <td>Points Played</td>
-                <td>PP Subsheet</td>
                 <td>Turns</td>
                 <td>Scores</td>
                 <td>Assists</td>
                 <td>Ds</td>
+                <td>Calahans</td>
                 <td>Touches</td>
-                <td>Turns/Touches</td>
-                <td>Turns/Points</td>
+
             </tr>
-            <tr ng-repeat="player in players">
+            <tr ng-repeat="player in players" ng-if="getPlayerStatsTotals(player.id, 'touches') > 0">
                 <td>{{player.name}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
-                <td>{{getPlayerPointTotalFromSubSheets(player.id)}}</td>
+                <!--<td>{{getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
+                <td>{{getPlayerPointTotalFromSubSheets(player.id)}}</td>-->
                 <td>{{getPlayerStatsTotals(player.id, "turns")}}</td>
                 <td>{{getPlayerStatsTotals(player.id, "scores")}}</td>
                 <td>{{getPlayerStatsTotals(player.id, "assists")}}</td>
                 <td>{{getPlayerStatsTotals(player.id, "ds")}}</td>
+                <td>{{getPlayerStatsTotals(player.id, "calahans")}}</td>
                 <td>{{getPlayerStatsTotals(player.id, "touches")}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "turns")/getPlayerStatsTotals(player.id, "touches")}}</td>
-                <td>{{getPlayerStatsTotals(player.id, "turns")/getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>
+                <!--<td>{{getPlayerStatsTotals(player.id, "turns")/getPlayerStatsTotals(player.id, "touches")}}</td>
+                <td>{{getPlayerStatsTotals(player.id, "turns")/getPlayerStatsTotals(player.id, "pointsPlayed")}}</td>-->
             </tr>
-        </table>-->
+        </table>
         <!--<table class="table table-hover table-condensed" style="width:45%">
             <tr>
                 <td>NAME</td>
@@ -120,7 +119,7 @@
         <!--{{generateStatSheet()}}-->
 
         <!--{{selectedSubSheet}}-->
-        {{totalPointsInSubsheet()}}
+        <!--{{totalPointsInSubsheet()}}-->
 
     </div>
   </body>

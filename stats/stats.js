@@ -168,18 +168,22 @@ app.controller('MainCtrl', function($scope) {
 
   $scope.getPlayerStatsTotals = function(player_id, statType) {
       var num = 0;
-      num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_JW, player_id, statType);
+      num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_ELEVATE, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_SNAP, player_id, statType);
+        num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_ENCORE, player_id, statType);
+      /*num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_JW, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_DISH, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_SIEGE, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_PPF, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_CLE, player_id, statType);
-       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_HEIST, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_HEIST, player_id, statType);*/
+      /* num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_GMG, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_GMG, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_SB, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_OZONE, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HEIST, player_id, statType);
         num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_NEMESIS, player_id, statType);
-        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HM, player_id, statType);
+        num = num + $scope.getPlayerStatsForGame($scope.playerstats_ESC2016_HM, player_id, statType);*/
       return num;
 
   };
@@ -212,6 +216,7 @@ app.controller('MainCtrl', function($scope) {
              point = point.replace("D","");
              point = point.replace("A","");
              point = point.replace("S","");
+             point = point.replace("C","");
              point = point.replace(/\*/g,"")
              if (parseInt(point) == pointNum) {
                  players.push(statline.player_id);
@@ -235,6 +240,7 @@ app.controller('MainCtrl', function($scope) {
               point = point.replace("D","");
               point = point.replace("A","");
               point = point.replace("S","");
+              point = point.replace("C","");
               point = point.replace(/\*/g,"")
               if (parseInt(point) > totalPoints) {
                   console.log(point + ">" + totalPoints);
@@ -311,6 +317,9 @@ app.controller('MainCtrl', function($scope) {
       }
       else if (statType == "ds") {
           return $scope.countSymbolInString(statsString, "D");
+      }
+      else if (statType == "calahans") {
+          return $scope.countSymbolInString(statsString, "C");
       }
 
 
@@ -796,6 +805,156 @@ app.controller('MainCtrl', function($scope) {
         "22": {"scoredby":"us", "players": [37,21,22,20,31,10,15]},
         "23": {"scoredby":"them", "players": [37,21,22,20,31,10,15]},
         "24": {"scoredby":"them", "players": [18,21,30,31,12,10,1]},
+      }
+  };
+
+  $scope.playerstats_SFI2016_ELEVATE = [
+    { "player_id": 27, "stats_string": "*********A"},
+    { "player_id": 21, "stats_string": "*****A***A******T*"},
+    { "player_id": 37, "stats_string": "****A****************T"},
+    { "player_id": 30, "stats_string": "*******T*S"},
+    { "player_id": 3, "stats_string": ""},
+    { "player_id": 5, "stats_string": "********C"},
+    { "player_id": 22, "stats_string": "*T**T**A*****A****"},
+    { "player_id": 11, "stats_string": "****T*****T**T****T*****A**"},
+    { "player_id": 2, "stats_string": "*T**"},
+    { "player_id": 15, "stats_string": "*S**AS"},
+    { "player_id": 6, "stats_string": ""},
+    { "player_id": 28, "stats_string": "*S"},
+    { "player_id": 1, "stats_string": "*TS*A***AS*DT*TS*T"},
+    { "player_id": 31, "stats_string": ""},
+    { "player_id": 20, "stats_string": "*S****S*T***TD*D**A"},
+    { "player_id": 8, "stats_string": "*****D**"},
+    { "player_id": 14, "stats_string": "DTDS*S**"},
+    { "player_id": 12, "stats_string": "**S*A*"},
+  ];
+
+  $scope.subsheet_SFI2016_ELEVATE = {
+      "gameid": "1",
+      "opponent": "ELEVATE",
+      "gameto": 13,
+      "score_us": 13,
+      "score_them": 6,
+      "startedon": "d",
+      "points":{
+        "5": {"scoredby":"us", "players": [16,18]},
+        "37": {"scoredby":"them", "players": [2,4,6,8,10,12,15,17]},
+        "11": {"scoredby":"us", "players": [2,4,5,7,9,12,14,16,19]},
+        "22": {"scoredby":"them", "players": [1,3,5,6,8,10,11,13,15,17,18]},
+        "21": {"scoredby":"us", "players": [2,3,5,7,9,11,13,14,16,18,19]},
+        "30": {"scoredby":"us", "players": [1,3,6,8,9,11,13,15,19]},
+        "3": {"scoredby":"us", "players": []},
+        "27": {"scoredby":"us", "players": [2,4,7,10,12,14,17]},
+        "31": {"scoredby":"us", "players": []},
+        "20": {"scoredby":"them", "players": [2,3,5,6,8,9,11,12,14,16,17,19]},
+        "8": {"scoredby":"us", "players": [2,4,5,7,9,11,12,15,16,18]},
+        "12": {"scoredby":"us", "players": [2,4,6,7,9,10,12,14,15,17,19]},
+        "14": {"scoredby":"us", "players": [1,3,6,8,9,11,13,15,17,18]},
+        "1": {"scoredby":"us", "players": [1,3,5,7,10,11,13,14,16,18]},
+        "6": {"scoredby":"us", "players": []},
+        "15": {"scoredby":"us", "players": [1,4,5,7,10,12,14,16,18]},
+        "2": {"scoredby":"us", "players": [1,3,6,8,13,19]},
+        "28": {"scoredby":"us", "players": [2,4,8,10,13,15,17,19]},
+      }
+  };
+
+  $scope.playerstats_SFI2016_SNAP = [
+    { "player_id": 27, "stats_string": "**T**T****A"},
+    { "player_id": 21, "stats_string": "*************T****T**T**T*"},
+    { "player_id": 37, "stats_string": "*****************"},
+    { "player_id": 30, "stats_string": "**AD***"},
+    { "player_id": 3, "stats_string": ""},
+    { "player_id": 5, "stats_string": "**A*****A***T***T"},
+    { "player_id": 22, "stats_string": "***T*T*****A***D*"},
+    { "player_id": 11, "stats_string": "*T**A***T**T"},
+    { "player_id": 2, "stats_string": "S*T**"},
+    { "player_id": 15, "stats_string": "**S*SD**AS*"},
+    { "player_id": 6, "stats_string": ""},
+    { "player_id": 28, "stats_string": "S*S"},
+    { "player_id": 1, "stats_string": "**A*T*T*A"},
+    { "player_id": 31, "stats_string": ""},
+    { "player_id": 20, "stats_string": "*S**D*S*T**TS*AS**S"},
+    { "player_id": 8, "stats_string": "D*T**A**AD*A**"},
+    { "player_id": 14, "stats_string": "*S*TDT**"},
+    { "player_id": 12, "stats_string": "*****S*T*"},
+  ];
+
+  $scope.subsheet_SFI2016_SNAP = {
+      "gameid": "2",
+      "opponent": "SNAP",
+      "gameto": 13,
+      "score_us": 13,
+      "score_them": 6,
+      "startedon": "d",
+      "points":{
+        "5": {"scoredby":"us", "players": [1,3,5,6,8,10,11,12,14,15,17,18]},
+        "37": {"scoredby":"them", "players": [1,4,7,9,12,14,16,19]},
+        "11": {"scoredby":"us", "players": [2,4,6,8,11,13,15,18]},
+        "22": {"scoredby":"them", "players": [2,4,7,9,11,13,16,18]},
+        "21": {"scoredby":"us", "players": [1,3,5,8,10,13,16,17,19]},
+        "30": {"scoredby":"us", "players": [2,5,7,10,14,17]},
+        "3": {"scoredby":"us", "players": []},
+        "27": {"scoredby":"us", "players": [3,6,9,12,15,19]},
+        "31": {"scoredby":"us", "players": []},
+        "20": {"scoredby":"them", "players": [1,3,5,6,8,9,11,12,14,16,17,19]},
+        "8": {"scoredby":"us", "players": [1,3,4,7,8,10,11,13,15,17,19]},
+        "12": {"scoredby":"us", "players": [1,3,5,7,9,11,13,14,16,18]},
+        "14": {"scoredby":"us", "players": [2,4,5,7,9,10,12,15,17,18]},
+        "1": {"scoredby":"us", "players": [2,4,6,8,12,14,15,18]},
+        "6": {"scoredby":"us", "players": []},
+        "15": {"scoredby":"us", "players": [1,4,6,8,10,12,14,16,17,19]},
+        "2": {"scoredby":"us", "players": [2,6,9,13,15,19]},
+        "28": {"scoredby":"us", "players": [2,3,5,7,10,11,13,16,18]},
+      }
+  };
+
+  $scope.playerstats_SFI2016_ENCORE = [
+    { "player_id": 27, "stats_string": "*****T*"},
+    { "player_id": 21, "stats_string": "***T********TD**A****C"},
+    { "player_id": 37, "stats_string": "****T************T***********T"},
+    { "player_id": 30, "stats_string": "*T**A***T**"},
+    { "player_id": 3, "stats_string": ""},
+    { "player_id": 5, "stats_string": "D******T******A******"},
+    { "player_id": 22, "stats_string": "***DS************"},
+    { "player_id": 11, "stats_string": "*****T*******T************T"},
+    { "player_id": 2, "stats_string": "*T"},
+    { "player_id": 15, "stats_string": "D*S*SST"},
+    { "player_id": 6, "stats_string": ""},
+    { "player_id": 28, "stats_string": "*SS*T**D*S"},
+    { "player_id": 1, "stats_string": "**A******A*T****A**A**A"},
+    { "player_id": 31, "stats_string": ""},
+    { "player_id": 20, "stats_string": "***AD**S**A***S"},
+    { "player_id": 8, "stats_string": "*****S*****AD***"},
+    { "player_id": 14, "stats_string": "**T**S*****A"},
+    { "player_id": 12, "stats_string": "T******S"},
+  ];
+
+  $scope.subsheet_SFI2016_ENCORE = {
+      "gameid": "3",
+      "opponent": "ENCORE",
+      "gameto": 13,
+      "score_us": 13,
+      "score_them": 4,
+      "startedon": "d",
+      "points":{
+        "5": {"scoredby":"us", "players": [1,3,5,7,8,10,11,12,14,16,17]},
+        "37": {"scoredby":"them", "players": [1,4,6,8,11,13,15]},
+        "11": {"scoredby":"us", "players": [1,3,5,8,10,12,14,16]},
+        "22": {"scoredby":"them", "players": [2,4,6,9,11,13,15]},
+        "21": {"scoredby":"us", "players": [2,5,7,9,10,12,16,17]},
+        "30": {"scoredby":"us", "players": [2,4,7,9,14,17]},
+        "3": {"scoredby":"us", "players": []},
+        "27": {"scoredby":"us", "players": [3,6,13,15]},
+        "31": {"scoredby":"us", "players": []},
+        "20": {"scoredby":"them", "players": [1,3,4,6,7,9,10,11,12,14,15]},
+        "8": {"scoredby":"us", "players": [2,4,5,7,8,10,12,14,16,17]},
+        "12": {"scoredby":"us", "players": [2,4,5,7,8,10,11,12,14,16]},
+        "14": {"scoredby":"us", "players": [1,3,4,6,8,9,11,13,15]},
+        "1": {"scoredby":"us", "players": [1,3,5,6,9,11,13,15,17]},
+        "6": {"scoredby":"us", "players": []},
+        "15": {"scoredby":"us", "players": [2,5,7,8,10,12,14,16,17]},
+        "2": {"scoredby":"us", "players": [2,6,13,15]},
+        "28": {"scoredby":"us", "players": [1,3,9,13,16,17]},
       }
   };
 
