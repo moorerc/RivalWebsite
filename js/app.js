@@ -77,6 +77,14 @@ app.controller('MainCtrl', function($scope) {
         return false;
     }
 
+    $scope.getTotalBadgesEarned = function() {
+        var total = 0;
+        for (user of $scope.users) {
+            total = total + user.badges.length;
+        }
+        return total;
+    }
+
   $scope.badges = [
       {
         "id": 100,
@@ -259,6 +267,104 @@ app.controller('MainCtrl', function($scope) {
   "description": "Catch someone else (stranger/teammate/etc) playing Pokemon Go. Take a selfie with them in the shot and post to slack. No credit if player catches you in the act.",
   "created_by": 8
 },
+{
+  "id": 123,
+  "title": "Fifty Plates",
+  "image": "badge_licenseplate.png",
+  "description": "Take a photo of / selfie with a state license plate and post it to slack. Individual credit only, no groups. After a state is claimed, nobody else can earn badge credit for that state.",
+  "created_by": 11
+},
+{
+  "id": 124,
+  "title": "Rusty Rampage",
+  "image": "badge_burger.png",
+  "description": "Snap a photo of a teammate eating unhealthy food (or really digging in to any food) and post it to slack. Can’t be at team dinners (ex: if we all get ice cream during a tourney or something).",
+  "created_by": 11
+},
+{
+  "id": 125,
+  "title": "Idyllic Improvement",
+  "image": "badge_arrowcircle.png",
+  "description": "Solicit feedback from a teammate, coach, or captain on how to improve your game. Prepare and complete a next step that incorporates their advice. Summarize your experience via Slack for credit.",
+  "created_by": 8
+},
+{
+  "id": 126,
+  "title": "Walker Stalker",
+  "image": "badge_stalker.png",
+  "description": "Take 5 photos of a teammate wearing 5 different outfits without getting caught. If you are caught you can no longer use that person to get this badge … you must stalk someone else. Can't be a housemate.",
+  "created_by": 9
+},
+{
+  "id": 127,
+  "title": "On Track",
+  "image": "badge_track.png",
+  "description": "Take a picture of yourself at a track post sprint workout (let’s get ready for regionals)!!",
+  "created_by": 9
+},
+{
+  "id": 128,
+  "title": "Anaconda",
+  "image": "badge_snake.png",
+  "description": "Take a video or post picture of you anaconda-ing someone. What is an anaconda? One of the three forms of armpit tickling of course -- make sure you have an unsuspecting target, create a fake scenario that causes them to lift their arm up (or they may create an opening on their own). When you see the prime opportunity, cup your hand and like an anaconda, pounce grabbing mid armpit and yelling ANACONDA!!",
+  "created_by": 9
+},
+{
+  "id": 129,
+  "title": "Teammate Terror",
+  "image": "badge_scream.png",
+  "description": "Videotape yourself scaring a teammate and upload to slack.",
+  "created_by": 9
+},
+{
+  "id": 130,
+  "title": "Innovation Station",
+  "image": "badge_brain.png",
+  "description": "Can receive badge three times. Must include picture of innovation space/ innovated equipment or exercise amendment. Can include picture of self if person has to modify workout for solo completion (i.e. Fakes instead of throws, throwing into nets). [See email for full explanation]",
+  "created_by": 16
+},
+{
+  "id": 131,
+  "title": "Hucking Habit",
+  "image": "badge_throw.png",
+  "description": "Work on your individual drive to improve! Throw 50 forehand hucks, 50 backhand hucks, 20 IO hucks, 20 OI hucks, and 15 hammers. By yourself. Take a pic of you and your friend Disc; post to slack for a #badge.",
+  "created_by": 14
+},
+{
+  "id": 132,
+  "title": "Fab Five",
+  "image": "badge_five.png",
+  "description": "Earn this badge by earning five other badges between RBQ updates.",
+  "created_by": 28
+},
+{
+  "id": 133,
+  "title": "Hometown Hero",
+  "image": "badge_house.png",
+  "description": "Share something you love about your hometown or the city that you're currently living in via a site-specific selfie. Must explain in comment what it is and why it's important to you.",
+  "created_by": 14
+},
+{
+  "id": 134,
+  "title": "The Ruler",
+  "image": "badge_ruler.png",
+  "description": "Complete this badge by taking a stab at the 2014 Club Nationals Rules Quiz (see email for link). Email me your answers to the twelve multiple choice questions and get at least 70% correct for badge credit. ",
+  "created_by": 8
+},
+{
+  "id": 135,
+  "title": "Gold Star",
+  "image": "badge_goldstar.png",
+  "description": "Earned by attempting a badge and giving full effort but not quite meeting the requirements. (Ex: attempting the Plank Pro but falling short of the record).",
+  "created_by": 31
+},
+{
+  "id": 136,
+  "title": "Rise and Shine",
+  "image": "badge_alarm.png",
+  "description": "Earned by taking a selfie upon waking up (and before getting out of bed) for five consecutive mornings and submitting the photos to slack.",
+  "created_by": 31
+},
 
   ];
 
@@ -293,6 +399,41 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470009840000",
                   "details":"West Virginia"
               },
+              {
+                  "id":115,
+                  "date_earned":"1470871620000",
+                  "details":"vs Brute Squad"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1471048080000",
+                  "details": "Indiana"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471203480000",
+                  "details":"Stevie ZZZ"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471645260000",
+                    "details":"West Virginia"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471652820000",
+                    "details":"Kentucky"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471655160000",
+                    "details":"New Jersey"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471655220000",
+                    "details":"Tennessee"
+              },
 
           ]
       },
@@ -326,6 +467,11 @@ app.controller('MainCtrl', function($scope) {
                 "date_earned":"1469278800000",
                 "details":"CHC Stats Team"
             },
+            {
+                  "id":134,
+                  "date_earned":"1472584800000",
+                  "details":""
+            },
 
         ]
       },
@@ -348,6 +494,31 @@ app.controller('MainCtrl', function($scope) {
                     "id":114,
                     "date_earned":"1468985880000",
                     "details":""
+              },
+              {
+                    "id":127,
+                    "date_earned":"1471795620000",
+                    "details":""
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472223840000",
+                    "details":"New Mexico"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472267100000",
+                    "details":"Montana"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472592360000",
+                    "details":"Rhode Island"
               },
 
           ]
@@ -382,6 +553,37 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469999640000",
                   "details":"Tots"
               },
+              {
+                  "id":115,
+                  "date_earned":"1470871620000",
+                  "details":"vs Brute Squad"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1471090320000",
+                    "details":""
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471403100000",
+                    "details":"Ohio"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471816260000",
+                    "details":"Kansas"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471639560000",
+                    "details":"Massachusetts"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472249220000",
+                    "details":"Washington"
+              },
+
 
           ]
       },
@@ -394,7 +596,12 @@ app.controller('MainCtrl', function($scope) {
                   "id":100,
                   "date_earned":"1466594436000",
                   "details":"Buddy Match Survey"
-              }
+              },
+              {
+                  "id":116,
+                  "date_earned":"1470937080000",
+                  "details":"TLo & Stevie"
+              },
           ]
       },
       {
@@ -411,6 +618,36 @@ app.controller('MainCtrl', function($scope) {
                   "id":109,
                   "date_earned":"1469278800000",
                   "details":"CHC Stats Team"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471636260000",
+                    "details":"Indiana"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471732560000",
+                    "details":"Oklahoma"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471732560000",
+                    "details":"Illinois"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471732680000",
+                    "details":"Maine"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1471483800000",
+                    "details":""
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472245500000",
+                    "details":"Hawaii"
               },
           ]
       },
@@ -474,6 +711,61 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470704220000",
                   "details":"New Record - 3:20"
               },
+              {
+                  "id":112,
+                  "date_earned":"1471231020000",
+                  "details":""
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471404000000",
+                    "details":"California"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471615380000",
+                    "details":"Texas"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471811040000",
+                    "details":"Nevada"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471790700000",
+                    "details":"Florida"
+              },
+              {
+                    "id":127,
+                    "date_earned":"1471838820000",
+                    "details":""
+              },
+              {
+                    "id":121,
+                    "date_earned":"1471492920000",
+                    "details":""
+              },
+              {
+                  "id":105,
+                  "date_earned":"1471927560000",
+                  "details":""
+              },
+              {
+                    "id":102,
+                    "date_earned":"1472133660000",
+                    "details":""
+              },
+              {
+                  "id":107,
+                  "date_earned":"1472528520000",
+                  "details":"The Ruler"
+              },
+              {
+                  "id":113,
+                  "date_earned":"1472922000000",
+                  "details":"Gatorade"
+              },
 
           ]
       },
@@ -497,6 +789,53 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1470262020000",
                     "details":""
               },
+              {
+                  "id":107,
+                  "date_earned":"1470939960000",
+                  "details":"Walker Stalker"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1470940140000",
+                  "details":"On Track"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1470940560000",
+                  "details":"Anaconda Badge"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1470940620000",
+                  "details":"Teammate Terror"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1470937560000",
+                  "details":"Minnesota"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1470937560000",
+                  "details":"Wyoming"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1470937560000",
+                  "details":"Idaho"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1470937980000",
+                  "details": "Wisconsin"
+              },
+              {
+                  "id":128,
+                  "date_earned":"1471790400000",
+                  "details":"Kristen"
+              },
+
+
           ]
       },
       {
@@ -544,6 +883,11 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469934360000",
                   "details":"Buddy Bonding"
               },
+              {
+                    "id":121,
+                    "date_earned":"1470788820000",
+                    "details":""
+              },
           ]
       },
       {
@@ -575,7 +919,158 @@ app.controller('MainCtrl', function($scope) {
                     "id":102,
                     "date_earned":"1469558280000",
                     "details":""
-              }
+              },
+              {
+                  "id":107,
+                  "date_earned":"1471089240000",
+                  "details":"Fifty Plates"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1470937140000",
+                  "details":"Rusty Rampage"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1470887820000",
+                  "details":"vs Brute Squad"
+              },
+              {
+                  "id":115,
+                  "date_earned":"1470887820000",
+                  "details":"In Person Bonus"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1470937080000",
+                  "details":"TLo & Stevie"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471117980000",
+                  "details":"Talia ZZZ"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471205040000",
+                  "details":"Brittany ZZZ"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471209120000",
+                  "details":"Hank ZZZ"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471439220000",
+                    "details":"Wisconsin"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471524840000",
+                    "details":"Colorado"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471731120000",
+                    "details":"Alaska"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471801860000",
+                    "details":"Connecticut"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471795740000",
+                    "details":"Nebraska"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1471532400000",
+                    "details":""
+              },
+              {
+                  "id":118,
+                  "date_earned":"1471528680000",
+                  "details":"Jules, Dani"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":124,
+                  "date_earned":"1471671240000",
+                  "details":""
+              },
+              {
+                  "id":124,
+                  "date_earned":"1471705260000",
+                  "details":""
+              },
+              {
+                  "id":108,
+                  "date_earned":"1471704900000",
+                  "details":"Shenanigans"
+              },
+              {
+                  "id":122,
+                  "date_earned":"1471706580000",
+                  "details":"Zeus"
+              },
+              {
+                  "id":120,
+                  "date_earned":"1472132760000",
+                  "details":"pre-colonial map gift for tz"
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472568660000",
+                    "details":""
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472568660000",
+                    "details":"Score Bonus"
+              },
+              {
+                  "id":112,
+                  "date_earned":"1472590260000",
+                  "details":""
+              },
+              {
+                  "id":117,
+                  "date_earned":"1472590500000",
+                  "details":"Zeus ZZZ"
+              },
+              {
+                  "id":126,
+                  "date_earned":"1472833800000",
+                  "details":"Stalked Sophie"
+              },
+              {
+                  "id":120,
+                  "date_earned":"1474749360000",
+                  "details":"map for tots"
+              },
+              {
+                  "id":132,
+                  "date_earned":"1473102000000",
+                  "details":"before update 8"
+              },
+
           ]
       },
       {
@@ -623,6 +1118,96 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470003360000",
                   "details":"Colorado"
               },
+              {
+                  "id":119,
+                  "date_earned":"1471048080000",
+                  "details": "Indiana"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471132500000",
+                  "details":"Stevie ZZZ"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471204740000",
+                  "details":"Stevie ZZZ"
+              },
+              {
+                  "id":122,
+                  "date_earned":"1471121520000",
+                  "details":"Sadie"
+              },
+              {
+                  "id":118,
+                  "date_earned":"1471699320000",
+                  "details":"TLo"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":124,
+                  "date_earned":"1471672440000",
+                  "details":""
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471880100000",
+                    "details":"Minnesota"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471881900000",
+                    "details":"Virginia"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472253420000",
+                    "details":"Maryland"
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472561760000",
+                    "details":""
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472561760000",
+                    "details":"Score Bonus"
+              },
+              {
+                  "id":126,
+                  "date_earned":"1472834820000",
+                  "details":"Stalked Hank"
+              },
+              {
+                  "id":126,
+                  "date_earned":"1474737840000",
+                  "details":"Stalked Kristen"
+              },
+              {
+                  "id":126,
+                  "date_earned":"1474737900000",
+                  "details":"Stalked Shakes"
+              },
+              {
+                  "id":132,
+                  "date_earned":"1473102000000",
+                  "details":"before update 8"
+              },
           ]
       },
       {
@@ -664,6 +1249,81 @@ app.controller('MainCtrl', function($scope) {
                     "id":102,
                     "date_earned":"1470061500000",
                     "details":""
+              },
+              {
+                  "id":107,
+                  "date_earned":"1470791400000",
+                  "details":"Idyllic Improvement"
+              },
+              {
+                  "id":113,
+                  "date_earned":"1471089600000",
+                  "details":"SFI Cookies"
+              },
+              {
+                  "id":103,
+                  "date_earned":"1471397640000",
+                  "details":"New Record - 3:30"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1471311420000",
+                    "details":""
+              },
+              {
+                  "id":107,
+                  "date_earned":"1471399260000",
+                  "details":"Hucking Habit"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":122,
+                  "date_earned":"1472131080000",
+                  "details":"Random Kids"
+              },
+              {
+                  "id":122,
+                  "date_earned":"1472131140000",
+                  "details":"Zeus"
+              },
+              {
+                  "id":124,
+                  "date_earned":"1472131740000",
+                  "details":""
+              },
+              {
+                    "id":121,
+                    "date_earned":"1472132040000",
+                    "details":""
+              },
+              {
+                    "id":102,
+                    "date_earned":"1472230260000",
+                    "details":""
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472132160000",
+                    "details":"North Carolina"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1472134920000",
+                  "details":"Hometown Hero"
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472644740000",
+                    "details":""
+              },
+              {
+                  "id":113,
+                  "date_earned":"1472950800000",
+                  "details":"Cookies"
               },
           ]
       },
@@ -707,6 +1367,52 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1469587560000",
                   "details":"Silent Disco"
               },
+              {
+                  "id":117,
+                  "date_earned":"1471117440000",
+                  "details":"Talia ZZZ"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471403460000",
+                    "details":"Michigan"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471403640000",
+                    "details":"Pennsylvania"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471456740000",
+                    "details":"New York"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471882860000",
+                    "details":"Alabama"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471882920000",
+                    "details":"Idaho"
+              },
+
           ]
       },
       {
@@ -749,6 +1455,41 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470009540000",
                   "details":"Ohio"
               },
+              {
+                  "id":115,
+                  "date_earned":"1470871620000",
+                  "details":"vs Brute Squad"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1470785340000",
+                    "details":""
+              },
+              {
+                    "id":121,
+                    "date_earned":"1470788820000",
+                    "details":""
+              },
+              {
+                  "id":107,
+                  "date_earned":"1471482120000",
+                  "details":"Innovation Station"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1471478820000",
+                    "details":""
+              },
+              {
+                  "id":100,
+                  "date_earned":"1471822500000",
+                  "details":"Regionals Van Packet"
+              },
+              {
+                  "id":131,
+                  "date_earned":"1471883100000",
+                  "details":""
+              },
           ]
       },
       {
@@ -776,6 +1517,22 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470701400000",
                   "details":"vs Scandal"
               },
+              {
+                  "id":115,
+                  "date_earned":"1470871620000",
+                  "details":"vs Brute Squad"
+              },
+              {
+                    "id":121,
+                    "date_earned":"1470788820000",
+                    "details":""
+              },
+              {
+                  "id":100,
+                  "date_earned":"1470841020000",
+                  "details":"Sectionals Prefs"
+              },
+
           ]
       },
       {
@@ -808,6 +1565,46 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470141300000",
                   "details":"Sadie"
               },
+              {
+                  "id":119,
+                  "date_earned":"1471048080000",
+                  "details": "Indiana"
+              },
+              {
+                  "id":122,
+                  "date_earned":"1471210440000",
+                  "details":"Sadie"
+              },
+              {
+                    "id":121,
+                    "date_earned":"1470788820000",
+                    "details":""
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":129,
+                  "date_earned":"1471721160000",
+                  "details":"Hank"
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472586300000",
+                    "details":""
+              },
           ]
       },
       {
@@ -829,6 +1626,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":109,
                   "date_earned":"1469278800000",
                   "details":"CHC Stats Team"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1471913760000",
+                    "details":""
               },
           ]
       },
@@ -867,13 +1669,79 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470012960000",
                   "details":"Michigan"
               },
+              {
+                  "id":117,
+                  "date_earned":"1471204920000",
+                  "details":"Brittany ZZZ"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471209120000",
+                  "details":"Hank ZZZ"
+              },
+              {
+                  "id":130,
+                  "date_earned":"1472171160000",
+                  "details":"Playground Throwing"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472413980000",
+                    "details":"(The Real) Montana"
+              },
           ]
       },
       {
           "id":27,
           "name": "bailey",
           "image": "user_bailey.jpg",
-          "badges": []
+          "badges": [
+              {
+                  "id":117,
+                  "date_earned":"1471119780000",
+                  "details":"TZ ZZZ"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1471208160000",
+                  "details":"TZ ZZZ"
+              },
+              {
+                  "id":122,
+                  "date_earned":"1471121520000",
+                  "details":"Stevie"
+              },
+              {
+                  "id":122,
+                  "date_earned":"1471304460000",
+                  "details":"Strangers at Work"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471724940000",
+                    "details":"Georgia"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471724940000",
+                    "details":"Arkansas"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1471865700000",
+                    "details":""
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472246460000",
+                    "details":"South Carolina"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472252700000",
+                    "details":"Missouri"
+              },
+          ]
       },
       {
           "id":28,
@@ -905,13 +1773,54 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470249120000",
                   "details":"Sadie"
               },
+              {
+                  "id":119,
+                  "date_earned":"1471014900000",
+                  "details": "Virginia"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1471739280000",
+                    "details":"Oregon"
+              },
+              {
+                    "id":127,
+                    "date_earned":"1471613280000",
+                    "details":""
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472087100000",
+                    "details":"Vermont"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472227860000",
+                    "details":"North Dakota"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1472145900000",
+                  "details":"Fab Five"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472686320000",
+                    "details":"New Hampshire"
+              },
           ]
       },
       {
           "id":30,
           "name": "jodi",
           "image": "user_jodi.jpg",
-          "badges": []
+          "badges": [
+              {
+                    "id":123,
+                    "date_earned":"1471457160000",
+                    "details":"Arizona"
+              },
+          ]
       },
       {
           "id":31,
@@ -988,6 +1897,26 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470068220000",
                   "details":""
               },
+              {
+                    "id":134,
+                    "date_earned":"1472673600000",
+                    "details":""
+              },
+              {
+                  "id":120,
+                  "date_earned":"1474749120000",
+                  "details":"package for tots"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1472673900000",
+                  "details":"Gold Star"
+              },
+              {
+                  "id":107,
+                  "date_earned":"1472940000000",
+                  "details":"Rise and Shine"
+              },
           ]
       },
       {
@@ -1020,6 +1949,41 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1470012960000",
                   "details":"Michigan"
               },
+              {
+                  "id":117,
+                  "date_earned":"1471118100000",
+                  "details":"Talia ZZZ"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1471663860000",
+                  "details":"Zeus/Sophie/Shakes do AA"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1472000700000",
+                    "details":"Iowa"
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472747700000",
+                    "details":""
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472747700000",
+                    "details":"Score Bonus"
+              },
           ]
       },
       {
@@ -1036,6 +2000,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":115,
                   "date_earned":"1469588760000",
                   "details":"vs Fury/Nightlock"
+              },
+              {
+                  "id":119,
+                  "date_earned":"1471014900000",
+                  "details": "Virginia"
               },
           ]
       },
@@ -1056,6 +2025,16 @@ app.controller('MainCtrl', function($scope) {
           "name": "theiss",
           "image": "user_theiss.jpg",
           "badges": [
+              {
+                    "id":134,
+                    "date_earned":"1472564580000",
+                    "details":""
+              },
+              {
+                    "id":134,
+                    "date_earned":"1472564580000",
+                    "details":"Score Bonus"
+              },
           ]
       }
   ];
