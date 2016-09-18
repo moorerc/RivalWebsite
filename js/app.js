@@ -25,7 +25,6 @@ app.controller('MainCtrl', function($scope) {
 
         for (user of $scope.users) {
             for (earnedBadge of user.badges){
-                console.log(earnedBadge);
                 if (earnedBadge.id == $scope.selectedBadge.id){
                     $scope.selectedBadgeHistory.push({'user':user.name, 'date':earnedBadge.date_earned, 'details':earnedBadge.details})
                 }
@@ -365,6 +364,13 @@ app.controller('MainCtrl', function($scope) {
   "description": "Earned by taking a selfie upon waking up (and before getting out of bed) for five consecutive mornings and submitting the photos to slack.",
   "created_by": 31
 },
+{
+  "id": 137,
+  "title": "Adulting",
+  "image": "badge_adult.png",
+  "description": "Submit an example to slack of a time when were very 'adult' and a time when you really weren't. Because rival is all about balance. (Ex: I pulled the hair out of the drain and then ate candy for dinner. )",
+  "created_by": 4
+},
 
   ];
 
@@ -434,6 +440,21 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1471655220000",
                     "details":"Tennessee"
               },
+              {
+                  "id":116,
+                  "date_earned":"1473167760000",
+                  "details":"Sadie/Kristen/Sophie/Harley/D Cbus Bond"
+              },
+              {
+                  "id":124,
+                  "date_earned":"1473513360000",
+                  "details":"sophie breakfast"
+              },
+              {
+                  "id":100,
+                  "date_earned":"1473720000000",
+                  "details":"Natties Roster Info"
+              },
 
           ]
       },
@@ -471,6 +492,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":134,
                   "date_earned":"1472584800000",
                   "details":""
+            },
+            {
+                "id":100,
+                "date_earned":"1473709500000",
+                "details":"Post Regionals Practice Prefs"
             },
 
         ]
@@ -519,6 +545,16 @@ app.controller('MainCtrl', function($scope) {
                     "id":123,
                     "date_earned":"1472592360000",
                     "details":"Rhode Island"
+              },
+              {
+                  "id":120,
+                  "date_earned":"1473386040000",
+                  "details":"backrubs for janine"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1473639840000",
+                  "details":"Jules ZZZ"
               },
 
           ]
@@ -582,6 +618,21 @@ app.controller('MainCtrl', function($scope) {
                     "id":123,
                     "date_earned":"1472249220000",
                     "details":"Washington"
+              },
+              {
+                    "id":135,
+                    "date_earned":"1473375540000",
+                    "details":"Hometown Hero Attempt (+ all other close badge attempts )"
+              },
+              {
+                    "id":136,
+                    "date_earned":"1473857760000",
+                    "details":""
+              },
+              {
+                  "id":107,
+                  "date_earned":"1473551280000",
+                  "details":"Adulting"
               },
 
 
@@ -766,6 +817,36 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1472922000000",
                   "details":"Gatorade"
               },
+              {
+                  "id":103,
+                  "date_earned":"1473255000000",
+                  "details":"New Record - 3:31"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1473269040000",
+                  "details":"Tots/Sara coffe + studying"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1473734640000",
+                    "details":"Real Life Hawaii"
+              },
+              {
+                    "id":133,
+                    "date_earned":"1473375060000",
+                    "details":"Sandwiches"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1473635040000",
+                  "details":"TLo ZZZ"
+              },
+              {
+                  "id":113,
+                  "date_earned":"1473544800000",
+                  "details":"Regionals Rice Krispies"
+              },
 
           ]
       },
@@ -887,6 +968,11 @@ app.controller('MainCtrl', function($scope) {
                     "id":121,
                     "date_earned":"1470788820000",
                     "details":""
+              },
+              {
+                  "id":116,
+                  "date_earned":"1473167760000",
+                  "details":"Sadie/Kristen/Sophie/Harley/D Cbus Bond"
               },
           ]
       },
@@ -1070,6 +1156,21 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1473102000000",
                   "details":"before update 8"
               },
+              {
+                  "id":124,
+                  "date_earned":"1473464940000",
+                  "details":"sara cookies"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1473543600000",
+                  "details":"TZ ZZZ"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1473684240000",
+                  "details":"Shoutouts for Dani"
+              },
 
           ]
       },
@@ -1208,6 +1309,11 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1473102000000",
                   "details":"before update 8"
               },
+              {
+                    "id":123,
+                    "date_earned":"1473293400000",
+                    "details":"Mississippi"
+              },
           ]
       },
       {
@@ -1325,6 +1431,26 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1472950800000",
                   "details":"Cookies"
               },
+              {
+                  "id":103,
+                  "date_earned":"1473255060000",
+                  "details":"New Record - 4:00 (completed 9/5)"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1473594300000",
+                    "details":"South Dakota"
+              },
+              {
+                  "id":125,
+                  "date_earned":"1473427260000",
+                  "details":"No Bounce Hucks"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1473635040000",
+                  "details":"TLo ZZZ"
+              },
           ]
       },
       {
@@ -1412,6 +1538,11 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1471882920000",
                     "details":"Idaho"
               },
+              {
+                  "id":112,
+                  "date_earned":"1473975360000",
+                  "details":""
+              },
 
           ]
       },
@@ -1490,6 +1621,16 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1471883100000",
                   "details":""
               },
+              {
+                  "id":108,
+                  "date_earned":"1473708000000",
+                  "details":"Who Runz the World?"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1473647040000",
+                  "details":"Shakes ZZZ"
+              },
           ]
       },
       {
@@ -1531,6 +1672,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":100,
                   "date_earned":"1470841020000",
                   "details":"Sectionals Prefs"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1473167760000",
+                  "details":"Sadie/Kristen/Sophie/Harley/D Cbus Bond"
               },
 
           ]
@@ -1605,6 +1751,16 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1472586300000",
                     "details":""
               },
+              {
+                  "id":116,
+                  "date_earned":"1473167760000",
+                  "details":"Sadie/Kristen/Sophie/Harley/D Cbus Bond"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1474158240000",
+                    "details":""
+              },
           ]
       },
       {
@@ -1631,6 +1787,11 @@ app.controller('MainCtrl', function($scope) {
                     "id":102,
                     "date_earned":"1471913760000",
                     "details":""
+              },
+              {
+                  "id":111,
+                  "date_earned":"1473699600000",
+                  "details":"Shoutouts for TZ"
               },
           ]
       },
@@ -1917,6 +2078,47 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1472940000000",
                   "details":"Rise and Shine"
               },
+              {
+                  "id":116,
+                  "date_earned":"1473269040000",
+                  "details":"Tots/Sara coffe + studying"
+              },
+              {
+                    "id":123,
+                    "date_earned":"1473547200000",
+                    "details":"Utah"
+              },
+              {
+                  "id":126,
+                  "date_earned":"1473544920000",
+                  "details":"Stalked Tots"
+              },
+              {
+                  "id":125,
+                  "date_earned":"1473387600000",
+                  "details":"Vocal Deep Cuts for Hank"
+              },
+              {
+                  "id":124,
+                  "date_earned":"1473476340000",
+                  "details":"tlo/tz cookies"
+              },
+              {
+                  "id":124,
+                  "date_earned":"1473512580000",
+                  "details":"tots donut"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1473635040000",
+                  "details":"TLo ZZZ"
+              },
+              {
+                  "id":113,
+                  "date_earned":"1473544800000",
+                  "details":"Regionals Cookies"
+              },
+
           ]
       },
       {
@@ -2017,6 +2219,11 @@ app.controller('MainCtrl', function($scope) {
                     "id":114,
                     "date_earned":"1468985880000",
                     "details":""
+              },
+              {
+                  "id":116,
+                  "date_earned":"1473167760000",
+                  "details":"Sadie/Kristen/Sophie/Harley/D Cbus Bond"
               },
           ]
       },
