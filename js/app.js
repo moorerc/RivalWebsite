@@ -498,6 +498,11 @@ app.controller('MainCtrl', function($scope) {
                 "date_earned":"1473709500000",
                 "details":"Post Regionals Practice Prefs"
             },
+            {
+                "id":111,
+                "date_earned":"1474236420000",
+                "details":"Monty Sick Bid"
+            },
 
         ]
       },
@@ -634,6 +639,26 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1473551280000",
                   "details":"Adulting"
               },
+              {
+                  "id":117,
+                  "date_earned":"1475199960000",
+                  "details":"Theiss ZZZ"
+              },
+              {
+                  "id":120,
+                  "date_earned":"1474249380000",
+                  "details":"hat for tz"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1474380720000",
+                    "details":""
+              },
+              {
+                    "id":135,
+                    "date_earned":"1475501220000",
+                    "details":"Trying to Earn Black Market Badge in Real RBQ"
+              },
 
 
           ]
@@ -652,6 +677,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":116,
                   "date_earned":"1470937080000",
                   "details":"TLo & Stevie"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1474228260000",
+                  "details":"Cali ZZZ"
               },
           ]
       },
@@ -846,6 +876,26 @@ app.controller('MainCtrl', function($scope) {
                   "id":113,
                   "date_earned":"1473544800000",
                   "details":"Regionals Rice Krispies"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1475525340000",
+                  "details":"Sara/Tots/TZ Toledo Bond"
+              },
+              {
+                  "id":120,
+                  "date_earned":"1475204220000",
+                  "details":"cookies for tz"
+              },
+              {
+                  "id":137,
+                  "date_earned":"1474548060000",
+                  "details":"jeans and juicebox"
+              },
+              {
+                    "id":127,
+                    "date_earned":"1474516140000",
+                    "details":""
               },
 
           ]
@@ -1171,6 +1221,27 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1473684240000",
                   "details":"Shoutouts for Dani"
               },
+              {
+                  "id":137,
+                  "date_earned":"1474416840000",
+                  "details":"career fair and packed lunches"
+              },
+              {
+                    "id":133,
+                    "date_earned":"1475551980000",
+                    "details":"Troy"
+              },
+              {
+                  "id":124,
+                  "date_earned":"1475429880000",
+                  "details":"shakes culvers"
+              },
+              {
+                    "id":136,
+                    "date_earned":"1475552100000",
+                    "details":""
+              },
+
 
           ]
       },
@@ -1314,6 +1385,51 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1473293400000",
                     "details":"Mississippi"
               },
+              {
+                  "id":111,
+                  "date_earned":"1475104140000",
+                  "details":"Sophie is Awesome"
+              },
+              {
+                  "id":126,
+                  "date_earned":"1474245780000",
+                  "details":"Stalked Shakes"
+              },
+              {
+                  "id":137,
+                  "date_earned":"1474404420000",
+                  "details":"changing tires and snapchatting"
+              },
+              {
+                  "id":137,
+                  "date_earned":"1475104500000",
+                  "details":"credit reports and candy"
+              },
+              {
+                    "id":133,
+                    "date_earned":"1475103840000",
+                    "details":"Dublin"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1474405680000",
+                    "details":""
+              },
+              {
+                  "id":129,
+                  "date_earned":"1475508900000",
+                  "details":"Cali"
+              },
+              {
+                  "id":106,
+                  "date_earned":"1475532720000",
+                  "details":""
+              },
+              {
+                  "id":132,
+                  "date_earned":"1476036000000",
+                  "details":"before final update"
+              },
           ]
       },
       {
@@ -1450,6 +1566,21 @@ app.controller('MainCtrl', function($scope) {
                   "id":117,
                   "date_earned":"1473635040000",
                   "details":"TLo ZZZ"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1474247040000",
+                  "details":"TZ/Sophie Cbus Bond"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1475525340000",
+                  "details":"Sara/Tots/TZ Toledo Bond"
+              },
+              {
+                  "id":131,
+                  "date_earned":"1474999560000",
+                  "details":""
               },
           ]
       },
@@ -1631,6 +1762,46 @@ app.controller('MainCtrl', function($scope) {
                   "date_earned":"1473647040000",
                   "details":"Shakes ZZZ"
               },
+              {
+                  "id":117,
+                  "date_earned":"1474549680000",
+                  "details":"Cali ZZZ"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1475283240000",
+                  "details":"Harley ZZZ"
+              },
+              {
+                  "id":137,
+                  "date_earned":"1474372440000",
+                  "details":"bed made and dessert for breakfast"
+              },
+              {
+                    "id":133,
+                    "date_earned":"1474373160000",
+                    "details":""
+              },
+              {
+                    "id":102,
+                    "date_earned":"1474377900000",
+                    "details":""
+              },
+              {
+                  "id":129,
+                  "date_earned":"1474418100000",
+                  "details":"Zeus"
+              },
+              {
+                    "id":135,
+                    "date_earned":"1475283120000",
+                    "details":"Sleeping Beauty Attempt"
+              },
+              {
+                  "id":132,
+                  "date_earned":"1476036000000",
+                  "details":"before final update"
+              },
           ]
       },
       {
@@ -1761,6 +1932,16 @@ app.controller('MainCtrl', function($scope) {
                     "date_earned":"1474158240000",
                     "details":""
               },
+              {
+                  "id":116,
+                  "date_earned":"1474247040000",
+                  "details":"TZ/Sophie Cbus Bond"
+              },
+              {
+                  "id":137,
+                  "date_earned":"1474474560000",
+                  "details":"working and snacks"
+              },
           ]
       },
       {
@@ -1792,6 +1973,11 @@ app.controller('MainCtrl', function($scope) {
                   "id":111,
                   "date_earned":"1473699600000",
                   "details":"Shoutouts for TZ"
+              },
+              {
+                    "id":102,
+                    "date_earned":"1474919880000",
+                    "details":""
               },
           ]
       },
@@ -1901,6 +2087,16 @@ app.controller('MainCtrl', function($scope) {
                     "id":123,
                     "date_earned":"1472252700000",
                     "details":"Missouri"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1474505940000",
+                  "details":"Kaimana Friends"
+              },
+              {
+                  "id":137,
+                  "date_earned":"1474590180000",
+                  "details":"clients and escape room"
               },
           ]
       },
@@ -2117,6 +2313,61 @@ app.controller('MainCtrl', function($scope) {
                   "id":113,
                   "date_earned":"1473544800000",
                   "details":"Regionals Cookies"
+              },
+              {
+                  "id":117,
+                  "date_earned":"1474824540000",
+                  "details":"TLo ZZZ"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1475549820000",
+                  "details":"Captains are Awesome"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1475549820000",
+                  "details":"Jules is Awesome"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1475549820000",
+                  "details":"Champs Sick Grabs"
+              },
+              {
+                  "id":111,
+                  "date_earned":"1475549820000",
+                  "details":"Jodi is Awesome"
+              },
+              {
+                  "id":116,
+                  "date_earned":"1475525340000",
+                  "details":"Sara/Tots/TZ Toledo Bond"
+              },
+              {
+                  "id":137,
+                  "date_earned":"1474417800000",
+                  "details":""
+              },
+              {
+                  "id":137,
+                  "date_earned":"1475156580000",
+                  "details":"studying and sick"
+              },
+              {
+                    "id":133,
+                    "date_earned":"1475027520000",
+                    "details":"Sunny Toledo"
+              },
+              {
+                    "id":127,
+                    "date_earned":"1474408500000",
+                    "details":""
+              },
+              {
+                  "id":132,
+                  "date_earned":"1476036000000",
+                  "details":"before final update"
               },
 
           ]
