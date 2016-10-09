@@ -168,9 +168,16 @@ app.controller('MainCtrl', function($scope) {
 
   $scope.getPlayerStatsTotals = function(player_id, statType) {
       var num = 0;
-      num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_ELEVATE, player_id, statType);
+      num = num + $scope.getPlayerStatsForGame($scope.playerstats_NAT2016_WILDFIRE, player_id, statType);
+      num = num + $scope.getPlayerStatsForGame($scope.playerstats_NAT2016_BRUTE, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_NAT2016_SHOWDOWN, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_NAT2016_TRAFFIC, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_NAT2016_GMG, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_NAT2016_HEIST, player_id, statType);
+       num = num + $scope.getPlayerStatsForGame($scope.playerstats_NAT2016_PHOENIX, player_id, statType);
+      /*num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_ELEVATE, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_SNAP, player_id, statType);
-        num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_ENCORE, player_id, statType);
+        num = num + $scope.getPlayerStatsForGame($scope.playerstats_SFI2016_ENCORE, player_id, statType);*/
       /*num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_JW, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_DISH, player_id, statType);
        num = num + $scope.getPlayerStatsForGame($scope.playerstats_CHC2016_SIEGE, player_id, statType);
@@ -296,7 +303,13 @@ app.controller('MainCtrl', function($scope) {
       for (statline of gameStats){
           if (statline.player_id == player_id) {
               statsString = statline.stats_string;
-              statsStringSplit =  statline.stats_string.split("_");
+              if (statsString == ""){
+                  statsStringSplit = [];
+              }
+              else {
+                  statsStringSplit =  statline.stats_string.split("_");
+              }
+
           }
       }
 
@@ -336,6 +349,467 @@ app.controller('MainCtrl', function($scope) {
             return 0;
       }
   }
+
+
+  // NATIONALS 2016 DATA
+
+  $scope.playerstats_NAT2016_WILDFIRE = [
+      { "player_id": 27, "stats_string": ""},
+      { "player_id": 21, "stats_string": "2_6_8_12**_13*_16*_18_22*T_26*"},
+      { "player_id": 37, "stats_string": "1*TD****_3_5_7***A_9_11**_13*S_15*_17*_19*TD*T_21*_23**_27*T**"},
+      { "player_id": 18, "stats_string": "1*T*_3***_5*_7**_9*_11**_13_15**_17_18_19*T**_20*D******T_21**A_23_25*_27**D*_28***"},
+      { "player_id": 9, "stats_string": "4**_14_24***"},
+      { "player_id": 30, "stats_string": "1*_3**_7S_9_11*A_15**_17_19*T_20*T_23_25D*A_27"},
+      { "player_id": 3, "stats_string": "6"},
+      { "player_id": 5, "stats_string": "2**_4*****_6_8*T_10*T*T_16***_22_25**"},
+      { "player_id": 22, "stats_string": "5**A_10**T_12*_14_16***T_20******T_21**_24****A_26_28*******"},
+      { "player_id": 11, "stats_string": "2**T_4*T***T_8_10*_12*_14*_18*T_22*T_24*_26*_28******T*"},
+      { "player_id": 77, "stats_string": ""},
+      { "player_id": 2, "stats_string": ""},
+      { "player_id": 15, "stats_string": "4**_10_12*A_16**_22_25*"},
+      { "player_id": 4, "stats_string": ""},
+      { "player_id": 6, "stats_string": "2_6_14_18_24_26"},
+      { "player_id": 16, "stats_string": ""},
+      { "player_id": 10, "stats_string": "2_3*_5*_8_10*_14*_16_18_20****_22_24**S_25**_28S"},
+      { "player_id": 28, "stats_string": ""},
+      { "player_id": 1, "stats_string": "2_4*T*_6_8_10D*_12*S_14*T_16*T**_22_24****_26*T"},
+      { "player_id": 31, "stats_string": "1*TS_3*A_5*S_6_7_9*A_11*_12*_13_15*A_17_18_19*_20*T*_21_23*TS_25_27TT*T*T_28****A"},
+      { "player_id": 20, "stats_string": "1*T*_3S_5_7_8_9_11*_13*A_14_15*T_17S_19_20*_21*S_23*A_26_27_28"},
+      { "player_id": 8, "stats_string": "1**A_5_7_9*S_11_15*_17*A_19D_21_23_27"},
+      { "player_id": 14, "stats_string": "2_4**T_6_8_10_12_13_16*_18_22_24***_26D"},
+      { "player_id": 12, "stats_string": "1_3_4*_7_9_11S_13_15S_17_19_20_21_23_25T*S_27D*_28"},
+  ];
+
+  $scope.subsheet_NAT2016_WILDFIRE = {
+      "gameid": "1",
+      "opponent": "WILDFIRE",
+      "gameto": 15,
+      "score_us": 15,
+      "score_them": 13,
+      "startedon": "o",
+      "points":{
+        "1": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "2": {"scoredby":"them", "players": [11,5,21,10,14,1,6]},
+        "3": {"scoredby":"us", "players": [37,18,30,31,20,12,10]},
+        "4": {"scoredby":"them", "players": [11,9,5,12,14,1,15]},
+        "5": {"scoredby":"us", "players": [37,18,22,31,20,10,8]},
+        "6": {"scoredby":"them", "players": [5,21,3,31,14,1,6]},
+        "7": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "8": {"scoredby":"them", "players": [11,5,21,20,10,14,1]},
+        "9": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "10": {"scoredby":"them", "players": [11,22,5,10,14,1,15]},
+        "11": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "12": {"scoredby":"us", "players": [11,22,21,31,14,1,15]},
+        "13": {"scoredby":"us", "players": [37,18,21,31,20,12,14]},
+        "14": {"scoredby":"them", "players": [11,9,22,20,10,1,6]},
+        "15": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "16": {"scoredby":"them", "players": [22,5,21,10,14,1,15]},
+        "17": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "18": {"scoredby":"them", "players": [18,11,21,31,10,14,6]},
+        "19": {"scoredby":"them", "players": [37,18,30,31,20,12,8]},
+        "20": {"scoredby":"them", "players": [18,22,30,31,20,12,10]},
+        "21": {"scoredby":"us", "players": [37,18,22,31,20,12,8]},
+        "22": {"scoredby":"them", "players": [11,5,21,10,14,1,15]},
+        "23": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "24": {"scoredby":"us", "players": [11,9,22,10,14,1,6]},
+        "25": {"scoredby":"us", "players": [18,30,5,31,12,10,15]},
+        "26": {"scoredby":"them", "players": [11,22,21,20,14,1,15]},
+        "27": {"scoredby":"them", "players": [37,18,30,31,20,12,8]},
+        "28": {"scoredby":"us", "players": [18,11,22,31,20,12,10]},
+      }
+  };
+
+  $scope.playerstats_NAT2016_BRUTE = [
+      { "player_id": 27, "stats_string": "8*_11_13_17*_19A"},
+      { "player_id": 21, "stats_string": "1*T_4_9_12*T_14_16*T_18**T**"},
+      { "player_id": 37, "stats_string": "2****_6*T**A_8_10T**_15**"},
+      { "player_id": 18, "stats_string": "2*T_3_6*D*T_7*_11*T_15**_19*"},
+      { "player_id": 9, "stats_string": "4_7*****T_10*_13***T_17*T_20*"},
+      { "player_id": 30, "stats_string": "2_6_9_11D*T_15*_19*"},
+      { "player_id": 3, "stats_string": "4_12_16_18*D_20"},
+      { "player_id": 5, "stats_string": "1*T_5*T**T_10*T_14_17*"},
+      { "player_id": 22, "stats_string": "3*_5**_8**_13****_16*T*_20**T"},
+      { "player_id": 11, "stats_string": "1_3*_5**T*_9*_12*_14T_18****T"},
+      { "player_id": 77, "stats_string": "14_18*T"},
+      { "player_id": 2, "stats_string": "11_16"},
+      { "player_id": 15, "stats_string": "3_4_6_8_19*"},
+      { "player_id": 4, "stats_string": "12_19S"},
+      { "player_id": 6, "stats_string": "1_4_9_12T"},
+      { "player_id": 16, "stats_string": "13D_17"},
+      { "player_id": 10, "stats_string": "1_3_6D*_7*_9_11_13**_17**"},
+      { "player_id": 28, "stats_string": "10_15_20"},
+      { "player_id": 1, "stats_string": "1_4_8D_10**T_16*_18*"},
+      { "player_id": 31, "stats_string": "2**T_3*A_5D_6*S_7*_9*T_11_13TD**T*A_15_17_19*"},
+      { "player_id": 20, "stats_string": "2*T_3S_5*T_6*T*_7*T_10*D*_12_16_18***T_20"},
+      { "player_id": 8, "stats_string": "2*D_5*_8_9_11_15S_17_19"},
+      { "player_id": 14, "stats_string": "1_4_7**_10*_13***S_16_20"},
+      { "player_id": 12, "stats_string": "2*_5_7**_8*T*T_12*_14_15*A_18*_20"},
+  ];
+
+
+  $scope.subsheet_NAT2016_BRUTE = {
+      "gameid": "2",
+      "opponent": "BRUTE",
+      "gameto": 15,
+      "score_us": 5,
+      "score_them": 15,
+      "startedon": "d",
+      "points":{
+        "1": {"scoredby":"them", "players": [11,5,21,10,14,1,6]},
+        "2": {"scoredby":"them", "players": [37,18,30,31,20,12,8]},
+        "3": {"scoredby":"us", "players": [18,11,22,31,20,10,15]},
+        "4": {"scoredby":"them", "players": [9,21,3,14,1,15,6]},
+        "5": {"scoredby":"them", "players": [11,22,5,31,20,12,8]},
+        "6": {"scoredby":"us", "players": [37,18,30,31,20,10,15]},
+        "7": {"scoredby":"them", "players": [18,9,31,20,12,10,14]},
+        "8": {"scoredby":"them", "players": [37,22,27,12,8,1,15]},
+        "9": {"scoredby":"them", "players": [11,30,21,31,10,8,6]},
+        "10": {"scoredby":"them", "players": [37,9,5,20,14,1,28]},
+        "11": {"scoredby":"them", "players": [18,30,27,31,10,8,2]},
+        "12": {"scoredby":"them", "players": [11,21,3,20,12,6,4]},
+        "13": {"scoredby":"us", "players": [9,22,27,31,10,14,16]},
+        "14": {"scoredby":"them", "players": [11,5,21,20,12,15,77]},
+        "15": {"scoredby":"us", "players": [37,18,30,31,12,8,28]},
+        "16": {"scoredby":"them", "players": [22,21,3,20,14,1,2]},
+        "17": {"scoredby":"them", "players": [9,5,27,31,10,8,16]},
+        "18": {"scoredby":"them", "players": [11,21,3,20,12,1,77]},
+        "19": {"scoredby":"us", "players": [18,30,27,31,8,15,4]},
+        "20": {"scoredby":"them", "players": [9,22,3,20,12,14,28]},
+      }
+  };
+
+  $scope.playerstats_NAT2016_SHOWDOWN = [
+      { "player_id": 27, "stats_string": ""},
+      { "player_id": 21, "stats_string": "4_6**_10S_14_18_22"},
+      { "player_id": 37, "stats_string": "1****T_3**A_5*T**_8*_9**T**T*T*S_12***_15*T***A_17**A_19*T*T*T_23****_25"},
+      { "player_id": 18, "stats_string": "1***D_3*_5*D*_7_8***_11*_13*_15*_17*_19S_21***_23*T**_25*_26*_27**"},
+      { "player_id": 9, "stats_string": "2_6**_10**_13_16_20D*_22"},
+      { "player_id": 30, "stats_string": "1S_3S_7_9*D*T_13_14_18_19*_21***_23**TD_25_26*_27"},
+      { "player_id": 3, "stats_string": "11"},
+      { "player_id": 5, "stats_string": "4_7_11*_14*T_16_20_24*T"},
+      { "player_id": 22, "stats_string": "2_5_9****A_12***D**D**_15*_17_20*T_21***_24_26**_27*"},
+      { "player_id": 11, "stats_string": "2_4_6*_8****T_10_12*****T*_16_18*T_22_24*T**T"},
+      { "player_id": 77, "stats_string": ""},
+      { "player_id": 2, "stats_string": ""},
+      { "player_id": 15, "stats_string": "3_6*A_10_13_16_22"},
+      { "player_id": 4, "stats_string": ""},
+      { "player_id": 6, "stats_string": "2_4_7_10*_16_18D"},
+      { "player_id": 16, "stats_string": ""},
+      { "player_id": 10, "stats_string": "1**T_4_6*_9_12*T***_14_15_18_20_21*_24D_25"},
+      { "player_id": 28, "stats_string": ""},
+      { "player_id": 1, "stats_string": "2_4D*T_6_10*A_11_14_16_18_20_22_24"},
+      { "player_id": 31, "stats_string": "1*T*_3_5*_6S_7_8*_9*_11*_12*T**T*13S_15_17_19**_20_21_23*T*AS_24D*D_26*A_27*A"},
+      { "player_id": 20, "stats_string": "1*T*TD*A_3*_5**A_7_8**_9_12D*D*TD**_14_15_17*_19*_21*A_22_23_25T_26S_27S"},
+      { "player_id": 8, "stats_string": "2_5*_8_9*D*_12*T**_17*S_19_23**"},
+      { "player_id": 14, "stats_string": "2_4_6_10*_11*T_13*A_14_16_18_20_22_24D_25*_26*_27"},
+      { "player_id": 12, "stats_string": "1*_3*_5_7_8*_9_11_13_15S_17_19*A_21*S_23_25_26_27"},
+  ];
+
+
+  $scope.subsheet_NAT2016_SHOWDOWN = {
+      "gameid": "3",
+      "opponent": "SHOWDOWN",
+      "gameto": 15,
+      "score_us": 14,
+      "score_them": 13,
+      "startedon": "o",
+      "points":{
+        "1": {"scoredby":"us", "players": [37,18,30,31,20,12,10]},
+        "2": {"scoredby":"them", "players": [11,9,22,8,14,1,6]},
+        "3": {"scoredby":"us", "players": [37,18,30,31,20,12,15]},
+        "4": {"scoredby":"them", "players": [11,5,21,10,14,1,6]},
+        "5": {"scoredby":"us", "players": [37,18,22,31,20,12,8]},
+        "6": {"scoredby":"us", "players": [11,9,21,10,14,1,15]},
+        "7": {"scoredby":"them", "players": [18,30,5,31,20,12,6]},
+        "8": {"scoredby":"them", "players": [37,18,11,31,20,12,8]},
+        "9": {"scoredby":"us", "players": [37,22,30,31,20,10,8]},
+        "10": {"scoredby":"us", "players": [11,9,21,14,1,15,6]},
+        "11": {"scoredby":"them", "players": [18,5,3,31,12,14,1]},
+        "12": {"scoredby":"them", "players": [37,11,22,31,20,10,8]},
+        "13": {"scoredby":"us", "players": [18,9,30,31,12,14,15]},
+        "14": {"scoredby":"them", "players": [30,5,21,20,10,14,1]},
+        "15": {"scoredby":"us", "players": [37,18,22,31,20,12,10]},
+        "16": {"scoredby":"them", "players": [11,9,5,14,1,15,6]},
+        "17": {"scoredby":"us", "players": [37,18,22,31,20,12,8]},
+        "18": {"scoredby":"them", "players": [11,30,21,10,14,1,6]},
+        "19": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "20": {"scoredby":"them", "players": [9,22,5,31,10,14,1]},
+        "21": {"scoredby":"us", "players": [18,22,30,31,20,12,10]},
+        "22": {"scoredby":"them", "players": [11,9,21,20,14,1,15]},
+        "23": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "24": {"scoredby":"them", "players": [11,22,5,31,10,14,1]},
+        "25": {"scoredby":"them", "players": [37,18,30,20,12,10,1]},
+        "26": {"scoredby":"us", "players": [18,22,30,31,20,12,14]},
+        "27": {"scoredby":"us", "players": [18,22,30,31,20,12,14]}, // line not written, same as above?
+      }
+  };
+
+  $scope.playerstats_NAT2016_TRAFFIC = [
+      { "player_id": 27, "stats_string": ""},
+      { "player_id": 21, "stats_string": "5*T*_9**T_11_16***_19_23_25*"},
+      { "player_id": 37, "stats_string": "1*_3*T_7**T_9**T_11*_13*_16*_18*A_20*_22_24**A_26"},
+      { "player_id": 18, "stats_string": "1_2_4***_7*_8**_10****D**TD*T_13_14*_16S_18S_20_22_24**S_26"},
+      { "player_id": 9, "stats_string": "3_6T_12_17_22*T"},
+      { "player_id": 30, "stats_string": "3_5****A_7_10***_13*_15*T_18_20*_21_25*"},
+      { "player_id": 3, "stats_string": ""},
+      { "player_id": 5, "stats_string": "5_9_12_17_23_25"},
+      { "player_id": 22, "stats_string": "2_4******_6D*_8**_10*_12_14*_15****_19_21*T_24***_26"},
+      { "player_id": 11, "stats_string": "1S_2*_4***T***_6*T**T_8***_10**T*T******_14**_15******_17_19_21*D*_23**"},
+      { "player_id": 77, "stats_string": ""},
+      { "player_id": 2, "stats_string": ""},
+      { "player_id": 15, "stats_string": "6_11S_12_16*"},
+      { "player_id": 4, "stats_string": ""},
+      { "player_id": 6, "stats_string": "5*T_9*_12_16_23"},
+      { "player_id": 16, "stats_string": ""},
+      { "player_id": 10, "stats_string": "3_4**D**A_6*_7*_9*_11_13_14*_15**_18_21_22_24**"},
+      { "player_id": 28, "stats_string": ""},
+      { "player_id": 1, "stats_string": "1*A_2_5_9_12_16D*_17_19_23*_25*A_26"},
+      { "player_id": 31, "stats_string": "1_2*A_3_5D*T*_7_8**A_10****_11_13*T_14*T_15*****A_18_19_20_21_22_24*T_25S_26"},
+      { "player_id": 20, "stats_string": "1_2S_4**S_6*_7_8**S_10*DT*_13*_14_15*S_17_18_19_20_21*T_23_25*_26"},
+      { "player_id": 8, "stats_string": "4**_7_8_10**_14*_17_20T_22_24*"},
+      { "player_id": 14, "stats_string": "1_2_3_5*D*S_9_11*A_12_16*A_17_19_22_23*_25*_26"},
+      { "player_id": 12, "stats_string": "3_4*_6_8_10***T**T_13T_15*TD*_18_20_21_24"},
+  ];
+
+
+  $scope.subsheet_NAT2016_TRAFFIC = {
+      "gameid": "4",
+      "opponent": "TRAFFIC",
+      "gameto": 15,
+      "score_us": 11,
+      "score_them": 15,
+      "startedon": "d",
+      "points":{
+        "1": {"scoredby":"us", "players": [37,18,11,31,20,14,1]},
+        "2": {"scoredby":"us", "players": [18,11,22,31,20,14,1]},
+        "3": {"scoredby":"them", "players": [37,9,30,31,12,10,14]},
+        "4": {"scoredby":"us", "players": [18,11,22,20,12,10,8]},
+        "5": {"scoredby":"us", "players": [30,5,21,31,14,1,6]},
+        "6": {"scoredby":"them", "players": [11,9,22,20,12,10,15]},
+        "7": {"scoredby":"them", "players": [37,18,30,31,20,10,8]},
+        "8": {"scoredby":"us", "players": [18,11,22,31,20,12,8]},
+        "9": {"scoredby":"them", "players": [37,5,21,10,14,1,6]},
+        "10": {"scoredby":"them", "players": [18,11,30,31,20,12,8]},
+        "11": {"scoredby":"us", "players": [37,22,21,31,10,14,15]},
+        "12": {"scoredby":"them", "players": [9,22,5,14,1,15,6]},
+        "13": {"scoredby":"them", "players": [37,18,30,31,20,12,10]},
+        "14": {"scoredby":"them", "players": [18,11,22,31,20,10,8]},
+        "15": {"scoredby":"us", "players": [11,22,30,31,20,12,10]},
+        "16": {"scoredby":"us", "players": [37,18,21,14,1,15,6]},
+        "17": {"scoredby":"them", "players": [11,9,21,20,8,14,1]},
+        "18": {"scoredby":"us", "players": [37,18,30,31,20,12,10]},
+        "19": {"scoredby":"them", "players": [11,22,21,31,20,14,1]},
+        "20": {"scoredby":"them", "players": [37,18,30,31,20,12,8]},
+        "21": {"scoredby":"them", "players": [11,22,30,31,20,12,10]},
+        "22": {"scoredby":"them", "players": [37,18,9,31,10,8,14]},
+        "23": {"scoredby":"them", "players": [11,5,21,20,14,1,6]},
+        "24": {"scoredby":"us", "players": [37,18,22,31,12,10,8]},
+        "25": {"scoredby":"us", "players": [30,5,21,31,20,14,1]},
+        "26": {"scoredby":"them", "players": [37,18,22,31,20,14,1]},
+      }
+  };
+
+  $scope.playerstats_NAT2016_GMG = [
+      { "player_id": 27, "stats_string": "22"},
+      { "player_id": 21, "stats_string": "2_6*_7_12*_16**_20********A"},
+      { "player_id": 37, "stats_string": "1*_3****A_5*****_8*D*_11***A_13D*_15***_17_18_19****_21***_23****T*T"},
+      { "player_id": 18, "stats_string": "1_3***_5*****_9*_11**_13_15****_17_19***T_20***T**"},
+      { "player_id": 9, "stats_string": "4_9***_14_16****S_20D**T**T***_23**T*"},
+      { "player_id": 30, "stats_string": "1*TDS_3**T_5***_8**_10_11_15*_18**_20"},
+      { "player_id": 3, "stats_string": "10_12*_17_21*D*"},
+      { "player_id": 5, "stats_string": "2_4*T_10_14D*_20***_22D*T"},
+      { "player_id": 22, "stats_string": "4_6*_7_9***_12**S_13_19**_20*T**_22**T*TD**"},
+      { "player_id": 11, "stats_string": "2_6**A_7_8**T**T**T_14***T_16*_18**T_21****_23*TD***T*T**T*T*T"},
+      { "player_id": 77, "stats_string": ""},
+      { "player_id": 2, "stats_string": "21S"},
+      { "player_id": 15, "stats_string": "2_4_6_10_12_14_16***_20*T*S_21T**"},
+      { "player_id": 4, "stats_string": "22"},
+      { "player_id": 6, "stats_string": "2_4_6_10_12D*_14**T_16*_20*T**_21_22"},
+      { "player_id": 16, "stats_string": "20D"},
+      { "player_id": 10, "stats_string": "2_4_6S_8*T_10_11*_14**_16*T*_18_19*D*_20DS_23*"},
+      { "player_id": 28, "stats_string": ""},
+      { "player_id": 1, "stats_string": ""},
+      { "player_id": 31, "stats_string": "1*_3_5***A_7_8****D*_9***T_11*_12****_13**A_15**A_17_18*_19*A_20**D***A_22*T"},
+      { "player_id": 20, "stats_string": "1*A_3S_5S_7_8***D*T_9*A_11S_13S_15S_17_18_19S_20*T**T**A_23D**"},
+      { "player_id": 8, "stats_string": "1*_3_5*_8t_11*_15_17_19**_23*"},
+      { "player_id": 14, "stats_string": "2_4_6_7_9*_10_12**A_13_14**_16****A_20*D*_21**_23***"},
+      { "player_id": 12, "stats_string": "1_3_5***_7_9*TD*S_13_15_17_18T_20*T*****_22D*T"},
+  ];
+
+
+  $scope.subsheet_NAT2016_GMG = {
+      "gameid": "5",
+      "opponent": "GMG",
+      "gameto": 15,
+      "score_us": 14,
+      "score_them": 10,
+      "startedon": "o",
+      "points":{
+        "1": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "2": {"scoredby":"them", "players": [11,5,21,10,14,15,6]},
+        "3": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "4": {"scoredby":"them", "players": [9,22,5,10,14,15,6]},
+        "5": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "6": {"scoredby":"us", "players": [11,22,21,10,14,15,6]},
+        "7": {"scoredby":"them", "players": [11,22,21,31,20,12,14]},
+        "8": {"scoredby":"them", "players": [37,11,30,31,20,10,8]},
+        "9": {"scoredby":"us", "players": [18,9,22,31,20,12,14]},
+        "10": {"scoredby":"them", "players": [30,5,3,10,14,15,6]},
+        "11": {"scoredby":"us", "players": [37,18,30,31,20,10,8]},
+        "12": {"scoredby":"us", "players": [22,21,3,31,14,15,6]},
+        "13": {"scoredby":"us", "players": [37,18,22,31,20,12,14]},
+        "14": {"scoredby":"them", "players": [11,9,5,10,14,15,6]},
+        "15": {"scoredby":"us", "players": [37,18,30,31,20,12,8]},
+        "16": {"scoredby":"us", "players": [11,9,21,10,14,15,6]},
+        "17": {"scoredby":"them", "players": [37,18,3,31,20,12,8]},
+        "18": {"scoredby":"them", "players": [37,11,30,31,20,12,10]},
+        "19": {"scoredby":"us", "players": [37,18,22,31,20,10,8]},
+        "20": {"scoredby":"us", "players": [9,5,21,12,14,15,6]},
+        "21": {"scoredby":"us", "players": [18,22,30,31,20,10,16]},
+        "22": {"scoredby":"us", "players": [37,11,27,20,14,15,2]},
+        "23": {"scoredby":"them", "players": [22,5,27,31,12,6,4]},
+        "24": {"scoredby":"them", "players": [37,11,9,20,10,8,14]},
+      }
+  };
+
+  $scope.playerstats_NAT2016_HEIST = [
+      { "player_id": 27, "stats_string": "13*A_16**_20_22"},
+      { "player_id": 21, "stats_string": "3**T**_7***D_13*T**_17_19**_22**"},
+      { "player_id": 37, "stats_string": "1**A_4*T_6*_8*T_10***_11*****_13*T*_16***A_18_20*A"},
+      { "player_id": 18, "stats_string": "2_4*T_6_8*_10**T_11**T_13*_14**A_16*D**_22**"},
+      { "player_id": 9, "stats_string": "3***_7**D*_11**T*T*_15T*T*D*T_21"},
+      { "player_id": 30, "stats_string": "1_4_8_10**_14*D_18*_21"},
+      { "player_id": 3, "stats_string": "12_15_19_21_23"},
+      { "player_id": 5, "stats_string": "1_5_9_12_14**_17_19T_23"},
+      { "player_id": 22, "stats_string": "1_5_6_9**t_13_15D****_20*"},
+      { "player_id": 11, "stats_string": "1_3***_5*_7**T**T_9*_10*_12_13***_17_18*_23"},
+      { "player_id": 77, "stats_string": "15_19"},
+      { "player_id": 2, "stats_string": "13_18S_21_23"},
+      { "player_id": 15, "stats_string": "3*T_7*T_9_13S_17"},
+      { "player_id": 4, "stats_string": "10*_17_21"},
+      { "player_id": 6, "stats_string": "1_3_7_9_12_13*_15**T_19_23"},
+      { "player_id": 16, "stats_string": "14_20"},
+      { "player_id": 10, "stats_string": "2_4_6_8_10*TD*_12_14DD_17_19*T*_22"},
+      { "player_id": 28, "stats_string": "12_16*_22"},
+      { "player_id": 1, "stats_string": ""},
+      { "player_id": 31, "stats_string": "1_2_4_5*T_6*A_8_9_11*A_13**A_14*TS_16*TS_18*_20*_22**A_23"},
+      { "player_id": 20, "stats_string": "2*S_4_5_6S_8_10*_11*S_13S*T_16_18*_20S_22*S"},
+      { "player_id": 8, "stats_string": "2_4_6_8_11*_13**t*_15_18_21"},
+      { "player_id": 14, "stats_string": "1_3*T_5*_7D*_9_12_13_15*_17_19**_21_23"},
+      { "player_id": 12, "stats_string": "1_3**T*D_5_7**T_10_11D**_13*_16_20*"},
+  ];
+
+
+  $scope.subsheet_NAT2016_HEIST = {
+      "gameid": "6",
+      "opponent": "HEIST",
+      "gameto": 15,
+      "score_us": 10,
+      "score_them": 14,
+      "startedon": "d",
+      "points":{
+        "1": {"scoredby":"them", "players": [11,22,5,31,12,14,6]},
+        "2": {"scoredby":"us", "players": [37,18,30,31,20,10,8]},
+        "3": {"scoredby":"them", "players": [11,9,21,12,14,15,6]},
+        "4": {"scoredby":"them", "players": [37,18,30,31,20,10,8]},
+        "5": {"scoredby":"them", "players": [11,22,5,31,20,12,14]},
+        "6": {"scoredby":"us", "players": [37,18,22,31,20,10,8]},
+        "7": {"scoredby":"them", "players": [11,9,21,12,14,15,6]},
+        "8": {"scoredby":"them", "players": [37,18,30,31,20,10,8]},
+        "9": {"scoredby":"them", "players": [11,22,5,31,14,15,6]},
+        "10": {"scoredby":"them", "players": [37,18,30,20,12,10,4]},
+        "11": {"scoredby":"us", "players": [37,18,9,31,20,12,8]},
+        "12": {"scoredby":"them", "players": [11,5,3,10,14,6,28]},
+        "13": {"scoredby":"us", "players": [37,18,22,31,20,8,2]},
+        "14": {"scoredby":"us", "players": [11,21,27,12,14,15,6]},
+        "15": {"scoredby":"us", "players": [18,30,5,31,20,10,16]},
+        "16": {"scoredby":"them", "players": [9,22,3,8,14,6,77]},
+        "17": {"scoredby":"us", "players": [37,18,27,31,20,12,28]},
+        "18": {"scoredby":"them", "players": [11,5,21,10,14,15,4]},
+        "19": {"scoredby":"us", "players": [37,11,30,31,20,8,2]},
+        "20": {"scoredby":"them", "players": [5,21,3,10,14,6,77]},
+        "21": {"scoredby":"us", "players": [37,22,27,31,20,12,16]},
+        "22": {"scoredby":"them", "players": [9,30,3,8,14,15,4]},
+        "23": {"scoredby":"us", "players": [18,21,27,31,20,10,28]},
+        "24": {"scoredby":"them", "players": [11,5,3,31,14,6,2]},
+      }
+  };
+
+  $scope.playerstats_NAT2016_PHOENIX = [
+      { "player_id": 27, "stats_string": "5***_19***_24"},
+      { "player_id": 21, "stats_string": "4_7**_11_15_18_22_25"},
+      { "player_id": 37, "stats_string": "1***_3*_5******_7*T****A_9*_10*_12***_14****_17***A_19**_21*****T**_24****_25**********T*"},
+      { "player_id": 18, "stats_string": "1*_3*_5***T****A_9*_10*_12**T**_13_14****_17***_19***A_21**D*_24***_25*********D*"},
+      { "player_id": 9, "stats_string": "2_6_11_15_20_23**"},
+      { "player_id": 30, "stats_string": "1_6_10**_13_14***_17**S_21**S_26*T****T"},
+      { "player_id": 3, "stats_string": "4_8*_20_25"},
+      { "player_id": 5, "stats_string": "2_8****_13_16_18_22_25"},
+      { "player_id": 22, "stats_string": "3***A_7S_9_12***T**_16_18_23**"},
+      { "player_id": 11, "stats_string": "2_4_6_8**T**T***T_11_!5_16_20_22_23***"},
+      { "player_id": 77, "stats_string": "6_20"},
+      { "player_id": 2, "stats_string": "4_15_22"},
+      { "player_id": 15, "stats_string": "2_6_9*T_12_15_16_18_23"},
+      { "player_id": 4, "stats_string": "4_16_24S"},
+      { "player_id": 6, "stats_string": "2_4_6_8*_11_13_15_18_20_25"},
+      { "player_id": 16, "stats_string": "5*S_17_26"},
+      { "player_id": 10, "stats_string": "1*T*_3**_5***_7**_8D*_10*_11_12*_14*_16_19*_21***_24_25_26*****"},
+      { "player_id": 28, "stats_string": "2_13_21***_25"},
+      { "player_id": 1, "stats_string": "18_20*_22_23***T"},
+      { "player_id": 31, "stats_string": ""},
+      { "player_id": 20, "stats_string": "1**_3S_5*****_7*_8_9_11_12D**S_14*S_17*_19_21*T*T*_24_25_26"},
+      { "player_id": 8, "stats_string": "1S_3_7_9*_10*A_13_14*A_17_19S_22_23*_24*"},
+      { "player_id": 14, "stats_string": "2_4_6_8D**_10*S_11_13_15_16_18_20D**T_22_23*_24*"},
+      { "player_id": 12, "stats_string": "1**A_3*_5*_7*_9_10T*A_14_17*_19*_21*TD*T***A"},
+  ];
+
+
+  $scope.subsheet_NAT2016_PHOENIX = {
+      "gameid": "7",
+      "opponent": "PHOENIX",
+      "gameto": 15,
+      "score_us": 11,
+      "score_them": 15,
+      "startedon": "o",
+      "points":{
+        "1": {"scoredby":"us", "players": [37,18,30,20,12,10,8]},
+        "2": {"scoredby":"them", "players": [11,9,5,14,15,6,28]},
+        "3": {"scoredby":"us", "players": [37,18,22,20,12,10,8]},
+        "4": {"scoredby":"them", "players": [11,21,3,14,6,4,2]},
+        "5": {"scoredby":"us", "players": [37,18,27,20,12,10,16]},
+        "6": {"scoredby":"them", "players": [11,9,30,14,15,6,77]},
+        "7": {"scoredby":"us", "players": [37,22,21,20,12,10,8]},
+        "8": {"scoredby":"them", "players": [11,5,3,20,10,14,6]},
+        "9": {"scoredby":"them", "players": [37,18,22,20,12,8,15]},
+        "10": {"scoredby":"us", "players": [37,18,30,12,10,8,14]},
+        "11": {"scoredby":"them", "players": [11,9,21,20,10,14,6]},
+        "12": {"scoredby":"us", "players": [37,18,22,20,12,10,15]},
+        "13": {"scoredby":"them", "players": [30,5,21,8,14,6,28]},
+        "14": {"scoredby":"us", "players": [37,18,30,20,12,10,8]},
+        "15": {"scoredby":"them", "players": [11,9,21,14,15,6,2]},
+        "16": {"scoredby":"them", "players": [11,22,5,10,14,15,4]},
+        "17": {"scoredby":"us", "players": [37,18,30,20,12,8,16]},
+        "18": {"scoredby":"them", "players": [22,5,21,14,1,15,6]},
+        "19": {"scoredby":"us", "players": [37,18,27,20,12,10,8]},
+        "20": {"scoredby":"them", "players": [11,9,3,14,1,6,77]},
+        "21": {"scoredby":"us", "players": [37,18,30,20,12,10,28]},
+        "22": {"scoredby":"them", "players": [11,5,21,8,14,1,2]},
+        "23": {"scoredby":"them", "players": [11,9,22,8,14,1,15]},
+        "24": {"scoredby":"us", "players": [37,18,27,20,10,14,4]},
+        "25": {"scoredby":"them", "players": [5,21,3,20,10,6,28]},
+        "26": {"scoredby":"them", "players": [37,18,30,20,10,8,16]},
+      }
+  };
+
+
+  // REGIONALS 2016 DATA
+
+
+
+
+
+
+
+  // ESC 2016 DATA
 
   $scope.playerstats_ESC2016_GMG = [
       { "player_id": 2, "stats_string": "7*T_14*"},
@@ -484,6 +958,10 @@ app.controller('MainCtrl', function($scope) {
       { "player_id": 14, "stats_string": "3_5_8*_11_14_16*T_20_22"},
       { "player_id": 12, "stats_string": "1_4*_8_12_16_19S"},
   ];
+
+
+
+
 
   $scope.playerstats_CHC2016_JW = [
       { "player_id": 18, "stats_string": "1*_3*_5_8***_10***A_12*_14*_15A_17" },
